@@ -5,10 +5,12 @@ import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from './HeaderSimple.module.css';
 
 const links = [
-    { link: '/about', label: 'Features' },
-    { link: '/pricing', label: 'Pricing' },
-    { link: '/learn', label: 'Learn' },
-    { link: '/community', label: 'Community' },
+    { link: '/home', label: 'Home' },
+    { link: '/team', label: 'Team' },
+    { link: '/car', label: 'Car' },
+    { link: '/competition', label: 'Competition' },
+    { link: '/support', label: 'Support' },
+    { link: '/social', label: 'Social' }
 ];
 
 export function HeaderSimple() {

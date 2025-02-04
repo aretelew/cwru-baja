@@ -1,7 +1,7 @@
 import { MantineProvider } from '@mantine/core';
 import { Routes, Route } from 'react-router-dom';
 import './App.css'
-import Home from './pages/Home.tsx';
+import Home from './pages/Home/Home.tsx';
 import '@mantine/core/styles.css';
 
 function App() {
