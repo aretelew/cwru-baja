@@ -1,7 +1,12 @@
+:root {
+  --navbar-height: 56px;
+}
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: var(--navbar-height) 2rem 0 2rem;
   text-align: center;
 }
 
