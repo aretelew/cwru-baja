@@ -1,9 +1,58 @@
-.carouselContainer {
-    width: 100%;
+.headerContainer {
+    max-width: 1800px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    /*align-items: center;*/
     flex-direction: column;
-    margin-top: 2rem;
+    margin: 2rem auto;
 }
 
+.controls {
+    transition: opacity 150ms ease;
+    opacity: 0;
+}
+
+.root {
+    &:hover {
+        .controls {
+            opacity: 1;
+        }
+    }
+}
+
+.divider {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 2rem 0;
+}
+
+.aboutContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+}
+
+.textContainer {
+    flex: 2;
+}
+
+.textContainer h1 {
+    color: var(--mantine-color-red-6); /* Red color */
+}
+
+.textImage {
+    flex: 1;
+    max-width: 300px;
+    margin-left: 2rem;
+}
+
+.aboutLink {
+    text-decoration: none;
+}
+
+.aboutLink:hover h1 {
+    color: var(--mantine-color-red-9); /* Change to desired hover color */
+}

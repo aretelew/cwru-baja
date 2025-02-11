@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { Burger, Container, Group } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
-import { MantineLogo } from '@mantinex/mantine-logo';
 import classes from './HeaderSimple.module.css';
+import logo from '../../assets/images/cwru_motorsports_beige_logo.png';
 
 const links = [
     { link: '/home', label: 'Home' },
+    { link: '/about', label: 'About' },
     { link: '/team', label: 'Team' },
     { link: '/car', label: 'Car' },
     { link: '/competition', label: 'Competition' },
@@ -14,7 +15,7 @@ const links = [
 ];
 
 export function HeaderSimple() {
-    const [opened, { toggle }] = useDisclosure(false);
+    const [opened, {toggle}] = useDisclosure(false);
     const [active, setActive] = useState(links[0].link);
 
     const items = links.map((link) => (
@@ -34,13 +35,12 @@ export function HeaderSimple() {
 
     return (
         <header className={classes.header}>
-            <Container size="md" className={classes.inner}>
-                <MantineLogo size={28} />
+            <Container size="xl" className={classes.inner}>
+                <img src={logo} alt="Logo" style={{ height: 40 }} />
                 <Group gap={5} visibleFrom="xs">
                     {items}
                 </Group>
-
-                <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
+                <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm"/>
             </Container>
         </header>
     );
