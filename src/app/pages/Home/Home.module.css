@@ -40,7 +40,7 @@
 }
 
 .textContainer h1 {
-    color: var(--mantine-color-red-6); /* Red color */
+    color: var(--mantine-color-red-9);
 }
 
 .textImage {
@@ -54,5 +54,19 @@
 }
 
 .aboutLink:hover h1 {
-    color: var(--mantine-color-red-9); /* Change to desired hover color */
+    color: var(--mantine-color-red-6);
+}
+
+.videoContainer {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    aspect-ratio: 16/9;
+}
+
+.videoContainer iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
 }

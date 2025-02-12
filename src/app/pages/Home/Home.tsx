@@ -49,11 +49,8 @@ export default function Home() {
                 <hr className={styles.divider}/>
                 <div className={styles.videoContainer}>
                     <iframe
-                        width="1000"
-                        height="563"
                         src="https://www.youtube.com/watch?v=wtBAbLzCRr0"
                         title="YouTube video player"
-                        frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                     ></iframe>

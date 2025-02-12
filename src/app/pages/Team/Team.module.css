@@ -1,0 +1,119 @@
+.headerContainer {
+    max-width: 1800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+}
+
+.teamContainer {
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+.divider {
+    width: 100%;
+    border: 0;
+    height: 1px;
+    background: #ccc;
+    margin: 2rem 0;
+}
+
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.teamTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.sectionTitle {
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 2rem 0;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.sectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--mantine-color-red-6);
+    border-radius: 2px;
+}
+
+.section {
+    padding: 3rem 0;
+    background: var(--mantine-color-dark-7);
+    border-radius: 8px;
+    margin: 2rem 0;
+    width: 100%;
+}
+
+.section:nth-child(even) {
+    background: var(--mantine-color-dark-8);
+}
+
+.membersContainer {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+}
+
+.member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    transition: transform 0.2s ease;
+}
+
+.member:hover {
+    transform: translateY(-5px);
+}
+
+.imageWrapper {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 1rem;
+    position: relative;
+    cursor: pointer;
+}
+
+.imageWrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.imageWrapper:hover::after {
+    box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1);
+}
+
+.imageWrapper img {
+    transition: filter 0.3s ease;
+}
+
+.imageWrapper:hover img {
+    filter: brightness(1.1);
+}

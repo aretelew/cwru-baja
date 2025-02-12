@@ -1,11 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Burger, Container, Group } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
+import { useNavigate, useLocation } from 'react-router-dom';
 import classes from './HeaderSimple.module.css';
-import logo from '../../assets/images/cwru_motorsports_beige_logo.png';
+import logo from '../../assets/logo/cwru_motorsports_white_no_text_logo.png';
 
 const links = [
-    { link: '/home', label: 'Home' },
+    { link: '/', label: 'Home' },
     { link: '/about', label: 'About' },
     { link: '/team', label: 'Team' },
     { link: '/car', label: 'Car' },
@@ -15,8 +16,14 @@ const links = [
 ];
 
 export function HeaderSimple() {
-    const [opened, {toggle}] = useDisclosure(false);
-    const [active, setActive] = useState(links[0].link);
+    const [opened, { toggle }] = useDisclosure(false);
+    const location = useLocation();
+    const [active, setActive] = useState(location.pathname);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        setActive(location.pathname);
+    }, [location.pathname]);
 
     const items = links.map((link) => (
         <a
@@ -27,6 +34,7 @@ export function HeaderSimple() {
             onClick={(event) => {
                 event.preventDefault();
                 setActive(link.link);
+                navigate(link.link);
             }}
         >
             {link.label}
@@ -40,7 +48,7 @@ export function HeaderSimple() {
                 <Group gap={5} visibleFrom="xs">
                     {items}
                 </Group>
-                <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm"/>
+                <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
             </Container>
         </header>
     );
