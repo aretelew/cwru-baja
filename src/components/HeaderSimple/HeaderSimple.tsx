@@ -3,7 +3,7 @@ import { Burger, Container, Group } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { useNavigate, useLocation } from 'react-router-dom';
 import classes from './HeaderSimple.module.css';
-import logo from '../../assets/logo/cwru_motorsports_white_no_text_logo.png';
+import logo from '../../assets/logo/team/cwru_motorsports_white_no_text_logo.png';
 
 const links = [
     { link: '/', label: 'Home' },

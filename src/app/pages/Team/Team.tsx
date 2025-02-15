@@ -43,10 +43,10 @@ function Member({ name, role, img }: { name: string; role: string; img: string }
                     fit="cover"
                 />
             </div>
-            <Text weight={500} size="lg" align="center" mt="md">
+            <Text size="lg" mt="md">
                 {name}
             </Text>
-            <Text size="sm" color="dimmed" align="center">
+            <Text size="sm">
                 {role}
             </Text>
         </div>

@@ -1,0 +1,91 @@
+.headerContainer {
+    max-width: 1800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+}
+
+.sponsorsTitle {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.tierSection {
+    width: 100%;
+    padding: 3rem 0;
+    background: var(--mantine-color-dark-7);
+    border-radius: 8px;
+    margin: 2rem 0;
+}
+
+.tierSection:nth-child(even) {
+    background: var(--mantine-color-dark-8);
+}
+
+.tierTitle {
+    text-align: center;
+    font-size: 1.8rem;
+    margin: 2rem 0;
+    padding: 1rem 0;
+    position: relative;
+}
+
+.tierTitle::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--mantine-color-red-6);
+    border-radius: 2px;
+}
+
+.sponsorsGrid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.sponsorLogo {
+    position: relative;
+    transition: all 0.3s ease;
+    filter: grayscale(100%);
+    cursor: pointer;
+}
+
+.sponsorLogo:hover {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* Tier-specific sizes */
+.ultimate .sponsorLogo {
+    width: 300px;
+    height: 200px;
+}
+
+.platinum .sponsorLogo {
+    width: 250px;
+    height: 166px;
+}
+
+.gold .sponsorLogo {
+    width: 200px;
+    height: 133px;
+}
+
+.silver .sponsorLogo {
+    width: 150px;
+    height: 100px;
+}
+
+.bronze .sponsorLogo {
+    width: 120px;
+    height: 80px;
+}
