@@ -9,12 +9,13 @@ import altairLogo from '../../../assets/logo/sponsor/altair_logo.png';
 import bmtLogo from '../../../assets/logo/sponsor/bmt_logo.png';
 import kissoftLogo from '../../../assets/logo/sponsor/kissoft_logo.png';
 import jergensLogo from '../../../assets/logo/sponsor/jergens_logo.png';
+import orangeViseLogo from '../../../assets/logo/sponsor/orange_vise_logo.png';
 
 const sponsors = {
     ultimate: [
         {
             name: "Ultimate Sponsor 1",
-            logo: "/api/placeholder/240/144",
+            logo: orangeViseLogo,
             url: "https://sponsor1.com",
             scale: .75
         },
@@ -108,13 +109,11 @@ function SponsorTier({ title, sponsors, tierClass }: {
                             <Image
                                 src={sponsor.logo}
                                 alt={`${sponsor.name} logo`}
-                                className={styles.sponsorLogo}
-                                style={{
-                                    transform: `scale(${sponsor.scale})`,
-                                    transition: 'transform 0.3s ease, filter 0.3s ease'
-                                }}
+                                className={`${styles.sponsorLogo} ${styles.dynamicScale}`}
+                                data-scale={sponsor.scale}
                                 fit="contain"
                             />
+
                         </div>
                     </a>
                 ))}

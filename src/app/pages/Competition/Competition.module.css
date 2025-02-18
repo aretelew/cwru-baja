@@ -1,0 +1,119 @@
+.headerContainer {
+    max-width: 1800px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.introSection {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.mainTitle {
+    color: var(--mantine-color-white);
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.description {
+    max-width: 900px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: var(--mantine-color-gray-3);
+}
+
+.competitionInfo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.infoText {
+    max-width: 900px;
+    margin: 0 auto 1rem;
+    color: var(--mantine-color-gray-3);
+}
+
+.infoLink {
+    color: var(--mantine-color-red-5);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.infoLink:hover {
+    color: var(--mantine-color-red-7);
+}
+
+.timerSection {
+    position: relative;
+    margin: 1rem auto;
+}
+
+.timerSection::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid var(--mantine-color-dark-4);
+    border-radius: 14px;
+    pointer-events: none;
+}
+
+.divider {
+    width: 100%;
+    border: 0;
+    height: 3px;
+    border-radius: 2px;
+    margin: 2rem 0;
+    background: var(--mantine-color-red-6);
+}
+
+.accomplishmentsTitle {
+    color: var(--mantine-color-white);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.seasonSection {
+    margin-bottom: 3rem;
+}
+
+.seasonTitle {
+    color: var(--mantine-color-white);
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.competitionCard {
+    background-color: var(--mantine-color-dark-7);
+    border: 1px solid var(--mantine-color-dark-4);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.competitionTitle {
+    color: var(--mantine-color-gray-2);
+    font-size: 1.2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--mantine-color-dark-4);
+    padding-bottom: 0.5rem;
+}
+
+.award {
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.award:hover {
+    filter: brightness(1.3); /* Brightens the badge color slightly on hover */
+}

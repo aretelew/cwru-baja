@@ -1,4 +1,5 @@
 import { Anchor, Avatar, Badge, Group, Table, Text } from '@mantine/core';
+import styles from './UsersTable.module.css';
 
 const data = [
     {
@@ -51,8 +52,8 @@ const jobColors: Record<string, string> = {
 
 export function UsersTable() {
     const rows = data.map((item) => (
-        <Table.Tr key={item.name} style={{ textAlign: 'left' }}>
-            <Table.Td>
+        <Table.Tr key={item.name} className={styles.tableRow}>
+            <Table.Td className={styles.tableCell}>
                 <Group gap="sm">
                     <Avatar size={50} src={item.avatar} radius={30} />
                     <Text fz="sm" fw={500}>
@@ -60,37 +61,35 @@ export function UsersTable() {
                     </Text>
                 </Group>
             </Table.Td>
-
-            <Table.Td>
+            <Table.Td className={styles.tableCell}>
                 <Badge color={jobColors[item.job.toLowerCase()]} variant="light">
                     {item.job}
                 </Badge>
             </Table.Td>
-            <Table.Td>
+            <Table.Td className={styles.tableCell}>
                 <Anchor component="button" size="sm">
                     {item.email}
                 </Anchor>
             </Table.Td>
-            <Table.Td>
+            <Table.Td className={styles.tableCell}>
                 <Text fz="sm">{item.phone}</Text>
             </Table.Td>
         </Table.Tr>
     ));
 
     return (
-        <Table.ScrollContainer minWidth={800}>
-            <Table verticalSpacing="sm">
+        <div className={styles.tableContainer}>
+            <Table className={styles.table} verticalSpacing="sm" highlightOnHover>
                 <Table.Thead>
                     <Table.Tr>
-                        <Table.Th style={{ textAlign: 'left' }}>Student</Table.Th>
-                        <Table.Th style={{ textAlign: 'left' }}>Subteam</Table.Th>
-                        <Table.Th style={{ textAlign: 'left' }}>Year</Table.Th>
-                        <Table.Th style={{ textAlign: 'left' }}>Major</Table.Th>
-                        <Table.Th />
+                        <Table.Th>Student</Table.Th>
+                        <Table.Th>Subteam</Table.Th>
+                        <Table.Th>Year</Table.Th>
+                        <Table.Th>Major</Table.Th>
                     </Table.Tr>
                 </Table.Thead>
                 <Table.Tbody>{rows}</Table.Tbody>
             </Table>
-        </Table.ScrollContainer>
+        </div>
     );
 }

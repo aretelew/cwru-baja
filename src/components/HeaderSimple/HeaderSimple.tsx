@@ -7,7 +7,6 @@ import logo from '../../assets/logo/team/cwru_motorsports_white_no_text_logo.png
 
 const links = [
     { link: '/', label: 'Home' },
-    { link: '/about', label: 'About' },
     { link: '/team', label: 'Team' },
     { link: '/car', label: 'Car' },
     { link: '/competition', label: 'Competition' },

@@ -1,0 +1,8 @@
+.tableContainer {
+        width: 100%;
+        overflow-x: auto;
+}
+
+.tableCell {
+    text-align: left;
+}

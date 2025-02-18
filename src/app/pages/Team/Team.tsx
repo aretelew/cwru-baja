@@ -61,29 +61,37 @@ export default function Team() {
                 <Container>
                     <h1 className={styles.teamTitle}>THE 2024-2025 CWRU MOTORSPORTS TEAM</h1>
 
-                    <h2 className={styles.sectionTitle}>Executive Board</h2>
-                    <div className={styles.membersContainer}>
-                        {executiveBoard.map((member) => (
-                            <Member key={member.name} {...member} />
-                        ))}
+                    <div className={styles.section}>
+                        <h2 className={styles.sectionTitle}>Executive Board</h2>
+                        <div className={styles.membersContainer}>
+                            {executiveBoard.map((member) => (
+                                <Member key={member.name} {...member} />
+                            ))}
+                        </div>
                     </div>
 
-                    <h2 className={styles.sectionTitle}>Operations Board</h2>
-                    <div className={styles.membersContainer}>
-                        {operationsBoard.map((member) => (
-                            <Member key={member.name} {...member} />
-                        ))}
+                    <div className={styles.section}>
+                        <h2 className={styles.sectionTitle}>Operations Board</h2>
+                        <div className={styles.membersContainer}>
+                            {operationsBoard.map((member) => (
+                                <Member key={member.name} {...member} />
+                            ))}
+                        </div>
                     </div>
 
-                    <h2 className={styles.sectionTitle}>Specialty Leads</h2>
-                    <div className={styles.membersContainer}>
-                        {specialtyLeads.map((member) => (
-                            <Member key={member.name} {...member} />
-                        ))}
+                    <div className={styles.section}>
+                        <h2 className={styles.sectionTitle}>Specialty Leads</h2>
+                        <div className={styles.membersContainer}>
+                            {specialtyLeads.map((member) => (
+                                <Member key={member.name} {...member} />
+                            ))}
+                        </div>
                     </div>
 
-                    <h2 className={styles.sectionTitle}>General Body</h2>
-                    <UsersTable />
+                    <div className={styles.section}>
+                        <h2 className={styles.sectionTitle}>General Body</h2>
+                        <UsersTable />
+                    </div>
                 </Container>
             </div>
             <FooterSocial />

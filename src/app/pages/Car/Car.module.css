@@ -1,0 +1,45 @@
+.headerContainer {
+    max-width: 1800px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 2rem auto;
+}
+
+.contentContainer {
+    display: flex;
+    max-width: 1800px;
+    margin: 2rem auto;
+    gap: 2rem;
+    position: relative;
+    min-height: calc(100vh - var(--navbar-height) - 4rem);
+}
+
+.textContent {
+    flex: 1;
+    padding: 2rem;
+}
+
+.modelContainer {
+    flex: 1;
+    position: sticky;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 80vh;
+    max-height: 800px;
+}
+
+.section {
+    margin-bottom: 3rem;
+}
+
+.section h2 {
+    color: var(--mantine-color-red-6);
+    margin-bottom: 1rem;
+}
+
+.section Text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+

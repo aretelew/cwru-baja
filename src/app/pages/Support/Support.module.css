@@ -14,15 +14,16 @@
 
 .tierSection {
     width: 100%;
-    padding: 3rem 0;
-    background: var(--mantine-color-dark-7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     margin: 2rem 0;
+    transition: border-color 0.2s ease;
 }
 
-.tierSection:nth-child(even) {
-    background: var(--mantine-color-dark-8);
+.tierSection:hover {
+    border-color: rgba(255, 255, 255, 0.2);
 }
+
 
 .tierTitle {
     text-align: center;
@@ -57,14 +58,14 @@
     transition: all 0.3s ease;
     filter: grayscale(100%);
     cursor: pointer;
+    transform: scale(var(--scale, 1));
 }
 
 .sponsorLogo:hover {
     filter: grayscale(0%);
-    transform: scale(1.05);
+    transform: scale(calc(var(--scale, 1) * 1.05)) translateY(-5px);
 }
 
-/* Tier-specific sizes */
 .ultimate .sponsorLogo {
     width: 300px;
     height: 200px;

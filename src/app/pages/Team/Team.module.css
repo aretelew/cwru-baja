@@ -34,18 +34,32 @@ h1 {
     margin-bottom: 2rem;
 }
 
+.section {
+    padding: 1rem 0;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin: 2rem 0;
+    width: 100%;
+    transition: border-color 0.2s ease;
+}
+
+.section:hover {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
 .sectionTitle {
     text-align: center;
     font-size: 1.8rem;
-    margin: 2rem 0;
-    padding: 1rem 0;
+    margin: 0 0 3rem 0; /* Adjusted top and bottom margins */
+    padding: 0.5rem 0;
     position: relative;
 }
 
 .sectionTitle::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -12px;
     left: 50%;
     transform: translateX(-50%);
     width: 100px;
@@ -55,16 +69,17 @@ h1 {
 }
 
 .section {
-    padding: 3rem 0;
+    padding: 2.5rem 0;
     background: var(--mantine-color-dark-7);
     border-radius: 8px;
     margin: 2rem 0;
     width: 100%;
 }
 
-.section:nth-child(even) {
-    background: var(--mantine-color-dark-8);
+.section:last-child {
+    padding-bottom: 0;
 }
+
 
 .membersContainer {
     display: flex;
