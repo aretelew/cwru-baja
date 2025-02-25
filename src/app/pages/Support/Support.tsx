@@ -9,13 +9,13 @@ import altairLogo from '../../../assets/logo/sponsor/altair_logo.png';
 import bmtLogo from '../../../assets/logo/sponsor/bmt_logo.png';
 import kissoftLogo from '../../../assets/logo/sponsor/kissoft_logo.png';
 import jergensLogo from '../../../assets/logo/sponsor/jergens_logo.png';
-import orangeViseLogo from '../../../assets/logo/sponsor/orange_vise_logo.png';
+
 
 const sponsors = {
     ultimate: [
         {
             name: "Ultimate Sponsor 1",
-            logo: orangeViseLogo,
+            logo: "",
             url: "https://sponsor1.com",
             scale: .75
         },
