@@ -2,22 +2,24 @@ import { useRef } from 'react';
 import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple.tsx';
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial.tsx';
 import { Carousel } from '@mantine/carousel';
-import { Image } from '@mantine/core';
+import { Image, Text, Button, Group, Box } from '@mantine/core';
 import Autoplay from 'embla-carousel-autoplay';
 import myImage from '../../../assets/images/butler_bash_car_lineup.jpg';
 import styles from './Home.module.css';
 import '@mantine/carousel/styles.css';
 
 export default function Home() {
-    const autoplay = useRef(Autoplay({ delay: 2000 }));
+    const autoplay = useRef(Autoplay({ delay: 4000 }));
+
     return (
         <>
             <div className={styles.headerContainer}>
                 <HeaderSimple />
-                <div>
+
+                <div className={styles.carouselContainer}>
                     <Carousel
                         withIndicators
-                        slideSize="60%"
+                        slideSize={{ base: '100%', sm: '70%', md: '40%' }}
                         height="100%"
                         draggable={true}
                         plugins={[autoplay.current]}
@@ -27,29 +29,49 @@ export default function Home() {
                         loop
                         classNames={styles}
                     >
-                        <Carousel.Slide><Image src={myImage} /></Carousel.Slide>
-                        <Carousel.Slide><Image src={myImage} /></Carousel.Slide>
-                        <Carousel.Slide><Image src={myImage} /></Carousel.Slide>
-                        <Carousel.Slide><Image src={myImage} /></Carousel.Slide>
-                        <Carousel.Slide><Image src={myImage} /></Carousel.Slide>
+                        <Carousel.Slide><Image radius="md" src={myImage} /></Carousel.Slide>
+                        <Carousel.Slide><Image radius="md" src={myImage} /></Carousel.Slide>
+                        <Carousel.Slide><Image radius="md" src={myImage} /></Carousel.Slide>
+                        <Carousel.Slide><Image radius="md" src={myImage} /></Carousel.Slide>
+                        <Carousel.Slide><Image radius="md" src={myImage} /></Carousel.Slide>
                     </Carousel>
                 </div>
+
                 <hr className={styles.divider} />
+
                 <div className={styles.aboutContainer}>
                     <div className={styles.textContainer}>
-                        <a href="#about-us" className={styles.aboutLink}>
-                            <h1 id="about-us">About Us</h1>
-                        </a>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-                        </p>
+                        <h1 id="about-us">About Us</h1>
+                        <Text size="lg" mb="xl" className={styles.p}>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia,
+                            justo eu tincidunt facilisis, velit nisi pulvinar eros, vel convallis
+                            magna leo at odio. Praesent egestas, nisl vel commodo fermentum, justo
+                            risus efficitur libero, vel rhoncus libero urna at justo.
+                        </Text>
+                        <Box mt={40}>  {/* Added extra spacing before buttons */}
+                            <Group>
+                                <Button variant="filled" color="red" size="md">
+                                    Learn More
+                                </Button>
+                                <Button variant="outline" color="red" size="md">
+                                    Contact Us
+                                </Button>
+                            </Group>
+                        </Box>
                     </div>
-                    <Image src={myImage} alt="Text Image" className={styles.textImage}/>
+                    <Image
+                        src={myImage}
+                        alt="Text Image"
+                        className={styles.textImage}
+                        radius="md"
+                    />
                 </div>
+
                 <hr className={styles.divider}/>
+
                 <div className={styles.videoContainer}>
                     <iframe
-                        src="https://www.youtube.com/watch?v=wtBAbLzCRr0"
+                        src="https://www.youtube.com/embed/wtBAbLzCRr0"
                         title="YouTube video player"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen

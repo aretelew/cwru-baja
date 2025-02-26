@@ -11,7 +11,6 @@ export default function Car() {
 
     useEffect(() => {
         const handleScroll = () => {
-            console.log('Scroll detected');
             const scrolled = window.scrollY || document.documentElement.scrollTop;
             const scrollable = document.documentElement.scrollHeight - window.innerHeight;
             if (scrollable > 0) {
