@@ -14,7 +14,7 @@ type MemberType = {
 
 const executiveBoard: MemberType[] = [
     {
-        name: "John Doe",
+        name: "Liam Flanagan",
         role: "President",
         img: myImage,
         linkedin: "https://www.linkedin.com/in/liam-f"
