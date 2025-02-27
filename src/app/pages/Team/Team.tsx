@@ -5,47 +5,81 @@ import styles from './Team.module.css';
 import { UsersTable } from "../../../components/UsersTable/UsersTable.tsx";
 import myImage from '../../../assets/images/butler_bash_car_lineup.jpg';
 
-// Use placeholder images for testing
-const placeholderImage = myImage
+type MemberType = {
+    name: string;
+    role: string;
+    img: string;
+    linkedin?: string;
+};
 
-const executiveBoard = [
-    { name: "John Doe", role: "President", img: placeholderImage },
-    { name: "Jane Smith", role: "Vice President", img: placeholderImage },
+const executiveBoard: MemberType[] = [
+    {
+        name: "John Doe",
+        role: "President",
+        img: myImage,
+        linkedin: "https://www.linkedin.com/in/liam-f"
+    },
 ];
 
-const operationsBoard = [
-    { name: "Alice Johnson", role: "Operations Manager", img: placeholderImage },
-    { name: "Bob Brown", role: "Logistics Lead", img: placeholderImage },
-    { name: "David Miller", role: "Finance Lead", img: placeholderImage },
-    { name: "David Miller", role: "Finance Lead", img: placeholderImage },
-    { name: "David Miller", role: "Finance Lead", img: placeholderImage },
-    { name: "David Miller", role: "Finance Lead", img: placeholderImage },
-    { name: "David Miller", role: "Finance Lead", img: placeholderImage },
+const operationsBoard: MemberType[] = [
+    {
+        name: "John Doe",
+        role: "President",
+        img: myImage,
+        linkedin: "https://www.linkedin.com/in/liam-f"
+    },
 ];
 
-const specialtyLeads = [
-    { name: "Charlie Davis", role: "Braking Lead", img: placeholderImage },
-    { name: "Emily White", role: "Suspension Lead", img: placeholderImage },
-    { name: "Frank Roberts", role: "Powertrain Lead", img: placeholderImage },
-    { name: "Grace Chen", role: "Aerodynamics Lead", img: placeholderImage },
+const specialtyLeads: MemberType[] = [
+    {
+        name: "John Doe",
+        role: "President",
+        img: myImage,
+        linkedin: "https://www.linkedin.com/in/liam-f"
+    },
 ];
 
-function Member({ name, role, img }: { name: string; role: string; img: string }) {
+function Member({ name, role, img, linkedin }: MemberType) {
     return (
         <div className={styles.member}>
-            <div className={styles.imageWrapper}>
-                <Image
-                    src={img}
-                    alt={name}
-                    radius="50%"
-                    h={150}
-                    w={150}
-                    fit="cover"
-                />
-            </div>
-            <Text size="lg" mt="md">
-                {name}
-            </Text>
+            {linkedin ? (
+                <a
+                    href={linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.linkedinLink}
+                >
+                    <div className={styles.imageWrapper}>
+                        <Image
+                            src={img}
+                            alt={name}
+                            radius="50%"
+                            h={150}
+                            w={150}
+                            fit="cover"
+                        />
+                    </div>
+                    <Text size="lg" mt="md" className={styles.linkedinName}>
+                        {name}
+                    </Text>
+                </a>
+            ) : (
+                <>
+                    <div className={styles.imageWrapper}>
+                        <Image
+                            src={img}
+                            alt={name}
+                            radius="50%"
+                            h={150}
+                            w={150}
+                            fit="cover"
+                        />
+                    </div>
+                    <Text size="lg" mt="md">
+                        {name}
+                    </Text>
+                </>
+            )}
             <Text size="sm">
                 {role}
             </Text>

@@ -20,16 +20,12 @@ export default function Car() {
             }
         };
 
-        // Log to confirm the effect is running
-        console.log('Setting up scroll listener');
-
         window.addEventListener('scroll', handleScroll);
 
         // Trigger initial calculation
         handleScroll();
 
         return () => {
-            console.log('Removing scroll listener');
             window.removeEventListener('scroll', handleScroll);
         };
     }, [totalFrames]);

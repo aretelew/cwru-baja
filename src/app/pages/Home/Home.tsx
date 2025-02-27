@@ -27,7 +27,6 @@ export default function Home() {
                         onMouseLeave={autoplay.current.reset}
                         slideGap="md"
                         loop
-                        classNames={styles}
                     >
                         <Carousel.Slide><Image radius="md" src={myImage} /></Carousel.Slide>
                         <Carousel.Slide><Image radius="md" src={myImage} /></Carousel.Slide>
@@ -48,12 +47,12 @@ export default function Home() {
                             magna leo at odio. Praesent egestas, nisl vel commodo fermentum, justo
                             risus efficitur libero, vel rhoncus libero urna at justo.
                         </Text>
-                        <Box mt={40}>  {/* Added extra spacing before buttons */}
+                        <Box mt={40}>
                             <Group>
-                                <Button variant="filled" color="red" size="md">
+                                <Button variant="filled" color="red" size="md" component="a" href="/cwru-baja/competition">
                                     Learn More
                                 </Button>
-                                <Button variant="outline" color="red" size="md">
+                                <Button variant="outline" color="red" size="md" component="a" href="/cwru-baja/social">
                                     Contact Us
                                 </Button>
                             </Group>

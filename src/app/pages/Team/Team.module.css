@@ -51,7 +51,7 @@ h1 {
 .sectionTitle {
     text-align: center;
     font-size: 1.8rem;
-    margin: 0 0 3rem 0; /* Adjusted top and bottom margins */
+    margin: 0 0 3rem 0;
     padding: 0.5rem 0;
     position: relative;
 }
@@ -107,28 +107,26 @@ h1 {
     margin-bottom: 1rem;
     position: relative;
     cursor: pointer;
-}
-
-.imageWrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
     border-radius: 50%;
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1);
+    overflow: hidden;
     transition: box-shadow 0.3s ease;
 }
 
-.imageWrapper:hover::after {
+.imageWrapper:hover {
     box-shadow: 0 0 0 8px rgba(0, 0, 0, 0.1);
 }
 
 .imageWrapper img {
     transition: filter 0.3s ease;
+    transform: scale(1);
+    will-change: filter;
 }
 
 .imageWrapper:hover img {
     filter: brightness(1.1);
+}
+
+.member a {
+    color: inherit;
 }

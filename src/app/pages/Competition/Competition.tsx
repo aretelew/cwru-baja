@@ -3,7 +3,11 @@ import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple';
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial';
 import styles from './Competition.module.css';
 
-const Award = ({ place, text }) => {
+interface AwardProps {
+    text: string;
+}
+
+const Award = ({ text }: AwardProps) => {
     const match = text.match(/(\d+)[A-Z]+\s+PLACE\s+(.+)/i);
     if (!match) return null;
 
@@ -18,12 +22,12 @@ const Award = ({ place, text }) => {
             className={styles.award}
             size="lg"
         >
-            {`${placement}${getOrdinalSuffix(placement)} Place ${award}`}
+            {`${placement}${getOrdinalSuffix(parseInt(placement))} Place ${award}`}
         </Badge>
     );
 };
 
-const getOrdinalSuffix = (number: number) => {
+const getOrdinalSuffix = (number: number): string => {
     const num = number;
     if (num <= 0) return '';
     if (num > 3 && num < 21) return 'th';
@@ -35,7 +39,17 @@ const getOrdinalSuffix = (number: number) => {
     }
 };
 
-const SeasonSection = ({ year, competitions }) => (
+interface Competition {
+    name: string;
+    awards: string[];
+}
+
+interface SeasonSectionProps {
+    year: string;
+    competitions: Competition[];
+}
+
+const SeasonSection = ({ year, competitions }: SeasonSectionProps) => (
     <div className={styles.seasonSection}>
         <Title order={3} className={styles.seasonTitle}>{year} SEASON</Title>
         <hr className={styles.divider} />
@@ -48,7 +62,7 @@ const SeasonSection = ({ year, competitions }) => (
                         </Title>
                         <Stack gap="xs" align="center">
                             {competition.awards.map((award, awardIndex) => (
-                                <Award key={awardIndex} place={awardIndex + 1} text={award} />
+                                <Award key={awardIndex} text={award} />
                             ))}
                         </Stack>
                     </Paper>

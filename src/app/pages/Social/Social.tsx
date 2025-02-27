@@ -14,7 +14,7 @@ const socialPlatforms = [
     name: 'Instagram',
     icon: IconBrandInstagram,
     color: '#E1306C',
-    url: 'https://instagram.com/your-handle',
+    url: 'https://www.instagram.com/cwrubaja/?hl=en',
     description: 'Follow us on Instagram for behind-the-scenes content and team updates.',
     buttonText: 'Follow on Instagram'
   },
@@ -22,7 +22,7 @@ const socialPlatforms = [
     name: 'YouTube',
     icon: IconBrandYoutube,
     color: '#FF0000',
-    url: 'https://youtube.com/your-channel',
+    url: 'https://www.youtube.com/channel/UCbYI9bH2k-ggW2idGL_oSUA',
     description: 'Subscribe to our YouTube channel for technical videos and event coverage.',
     buttonText: 'Subscribe on YouTube'
   },
@@ -30,7 +30,7 @@ const socialPlatforms = [
     name: 'Facebook',
     icon: IconBrandFacebook,
     color: '#1877F2',
-    url: 'https://facebook.com/your-page',
+    url: 'https://www.facebook.com/cwrubaja/',
     description: 'Join our Facebook community for event announcements and team news.',
     buttonText: 'Like on Facebook'
   },
@@ -38,7 +38,7 @@ const socialPlatforms = [
     name: 'LinkedIn',
     icon: IconBrandLinkedin,
     color: '#0A66C2',
-    url: 'https://linkedin.com/company/your-page',
+    url: 'https://www.linkedin.com/company/cwru-motorsports/',
     description: 'Connect with us on LinkedIn for professional updates and networking.',
     buttonText: 'Connect on LinkedIn'
   }

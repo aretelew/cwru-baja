@@ -13,9 +13,8 @@
     margin-bottom: 2rem;
 }
 
-.controls {
-    transition: opacity 200ms ease;
-    opacity: 0;
+.control {
+    right: 50px;
 }
 
 .divider {
@@ -40,8 +39,20 @@
 
 .textContainer h1 {
     font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
     position: relative;
+}
+
+.textContainer h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background: var(--mantine-color-red-6);
+    border-radius: 2px;
 }
 
 .textContainer p {
