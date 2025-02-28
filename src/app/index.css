@@ -53,18 +53,3 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
-/* This allows specific pages to override the standard body styles */
-body.allow-scroll {
-  min-height: auto;
-  height: auto;
-  overflow: visible;
-  display: block; /* Override flex display */
-}
-
-/* This lets the root container scroll when needed */
-#root.allow-scroll {
-  height: auto;
-  min-height: 100vh;
-  overflow: visible;
-}

@@ -130,3 +130,15 @@ h1 {
 .member a {
     color: inherit;
 }
+
+/* New styles for graduation year */
+.gradYear {
+    margin-top: 0.25rem;
+    color: var(--mantine-color-gray-5);
+    font-style: italic;
+}
+
+/* Optional: Adjust spacing for the roles to accommodate graduation year */
+.member > .mantine-Text-root:nth-of-type(1) {
+    margin-bottom: 0.1rem;
+}
