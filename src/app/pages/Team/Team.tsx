@@ -3,6 +3,7 @@ import { FooterSocial } from '../../../components/FooterSocial/FooterSocial.tsx'
 import { Container, Image, Text } from '@mantine/core';
 import styles from './Team.module.css';
 import { UsersTable } from "../../../components/UsersTable/UsersTable.tsx";
+import { FadeIn } from '../../../components/FadeIn/FadeIn.tsx'; // Import the FadeIn component
 import myImage from '../../../assets/images/butler_bash_car_lineup.jpg';
 import LMF04593 from '../../../assets/images/headshots/LMF04593.jpg';
 import LMF04533 from '../../../assets/images/headshots/LMF04533.jpg';
@@ -236,45 +237,61 @@ function Member({ name, role, img, graduationYear, linkedin }: MemberType) {
     );
 }
 
+// Function to create staggered fade-in effects for members
+function MembersList({ members }: { members: MemberType[] }) {
+    return (
+        <div className={styles.membersContainer}>
+            {members.map((member, index) => (
+                <FadeIn
+                    key={member.name}
+                    delay={0.1 * (index % 4)} // Stagger effect based on position
+                    direction="up"
+                    distance={20}
+                >
+                    <Member {...member} />
+                </FadeIn>
+            ))}
+        </div>
+    );
+}
+
 export default function Team() {
     return (
         <>
             <div className={styles.headerContainer}>
                 <HeaderSimple />
-                <Container>
-                    <h1 className={styles.teamTitle}>THE 2024-2025 CWRU MOTORSPORTS TEAM</h1>
+                <Container className={styles.pageContent}>
+                    <FadeIn direction="up">
+                        <h1 className={styles.pageTitle}>2024-2025 CWRU MOTORSPORTS TEAM</h1>
+                    </FadeIn>
 
-                    <div className={styles.section}>
-                        <h2 className={styles.sectionTitle}>Executive Board</h2>
-                        <div className={styles.membersContainer}>
-                            {executiveBoard.map((member) => (
-                                <Member key={member.name} {...member} />
-                            ))}
+                    <FadeIn direction="up" delay={0.1}>
+                        <div className={styles.section}>
+                            <h2 className={styles.sectionTitle}>Executive Board</h2>
+                            <MembersList members={executiveBoard} />
                         </div>
-                    </div>
+                    </FadeIn>
 
-                    <div className={styles.section}>
-                        <h2 className={styles.sectionTitle}>Operations Board</h2>
-                        <div className={styles.membersContainer}>
-                            {operationsBoard.map((member) => (
-                                <Member key={member.name} {...member} />
-                            ))}
+                    <FadeIn direction="up" delay={0.2}>
+                        <div className={styles.section}>
+                            <h2 className={styles.sectionTitle}>Operations Board</h2>
+                            <MembersList members={operationsBoard} />
                         </div>
-                    </div>
+                    </FadeIn>
 
-                    <div className={styles.section}>
-                        <h2 className={styles.sectionTitle}>Specialty Leads</h2>
-                        <div className={styles.membersContainer}>
-                            {specialtyLeads.map((member) => (
-                                <Member key={member.name} {...member} />
-                            ))}
+                    <FadeIn direction="up" delay={0.3}>
+                        <div className={styles.section}>
+                            <h2 className={styles.sectionTitle}>Specialty Leads</h2>
+                            <MembersList members={specialtyLeads} />
                         </div>
-                    </div>
+                    </FadeIn>
 
-                    <div className={styles.section}>
-                        <h2 className={styles.sectionTitle}>General Body</h2>
-                        <UsersTable />
-                    </div>
+                    <FadeIn direction="up" delay={0.4}>
+                        <div className={styles.section}>
+                            <h2 className={styles.sectionTitle}>General Body</h2>
+                            <UsersTable />
+                        </div>
+                    </FadeIn>
                 </Container>
             </div>
             <FooterSocial />

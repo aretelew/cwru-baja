@@ -3,52 +3,58 @@ import styles from './UsersTable.module.css';
 
 const jobColors: Record<string, string> = {
     'Systems': 'blue',
-    'CNC Manufacturing': 'green',
-    'Frame/Suspension': 'red',
-    'Brakes': 'purple',
+    'CNC': 'green',
+    'Brakes': 'red',
     'Manufacturing': 'yellow',
-    'Test Engineering': 'orange',
+    'Test Engineering': 'brown',
     'Drivetrain': 'cyan',
-    'Frame': 'pink',
+    'Frame': 'orange',
     'Suspension': 'teal',
     'Design': 'gray'
 };
 
-const data = [
-    { name: 'Abra Giddings', subteam: 'Systems', year: '', major: '' },
-    { name: 'Abraham Loren', subteam: 'CNC Manufacturing', year: '', major: '' },
-    { name: 'AJ Williams', subteam: 'Frame/Suspension', year: '', major: '' },
-    { name: 'Anthony Retelewski', subteam: 'Brakes', year: '', major: '' },
-    { name: 'Ari Avalos', subteam: 'Frame', year: '', major: '' },
-    { name: 'Arka Nath', subteam: 'Brakes', year: '', major: '' },
-    { name: 'Aryeh Rothenberg', subteam: 'Manufacturing', year: '', major: '' },
-    { name: 'Avaneesh Rao', subteam: 'Brakes/Suspension', year: '', major: '' },
-    { name: 'Ben Roy', subteam: 'Test Engineering', year: '', major: '' },
-    { name: 'Brendan Flanagan', subteam: 'CNC', year: '', major: '' },
-    { name: 'Cameron Griffith', subteam: 'Manufacturing', year: '', major: '' },
-    { name: 'Ciaran Nimick', subteam: 'Test Engineering', year: '', major: '' },
-    { name: 'Cole Smith', subteam: 'Systems', year: '', major: '' },
-    { name: 'Daniel de Dios Molina', subteam: '', year: '', major: '' },
-    { name: 'David Kaplan', subteam: '', year: '', major: '' },
-    { name: 'Eladov Kleinerman', subteam: 'CNC', year: '', major: '' },
-    { name: 'Evan Grover', subteam: 'Systems', year: '', major: '' },
-    { name: 'Evan Zhou', subteam: 'Manufacturing', year: '', major: '' },
-    { name: 'Finn Barrett', subteam: '', year: '', major: '' },
-    { name: 'Gabriel Kenji Miyake', subteam: 'Frame', year: '', major: '' },
-    { name: 'Giovanni Ricupero', subteam: 'Suspension', year: '', major: '' },
-    { name: 'Isaac Hugenberger', subteam: 'Design', year: '', major: '' },
-    { name: 'Jack Fink', subteam: 'Manufacturing', year: '', major: '' },
-    { name: 'Jake Meltzer', subteam: 'Manufacturing', year: '', major: '' },
-    { name: 'James Evans', subteam: 'Manufacturing', year: '', major: '' },
-    { name: 'Jesse Nevling', subteam: 'Drivetrain', year: '', major: '' },
-    { name: 'Jessica Shue', subteam: 'Frame', year: '', major: '' },
-    { name: 'John Scherer', subteam: 'Frame', year: '', major: '' },
-    { name: 'Jonah Keller', subteam: 'Manufacturing', year: '', major: '' },
-    { name: 'Jonah Lorenzo', subteam: 'Systems', year: '', major: '' },
-    { name: 'Karthik Rajasekar', subteam: 'Manufacturing', year: '', major: '' },
-    { name: 'Kyle Rosenbaum', subteam: 'Manufacturing', year: '', major: '' },
-    { name: 'Zach Wolf', subteam: 'Manufacturing', year: '', major: '' },
-    { name: 'Zane Sandelin', subteam: 'Drivetrain', year: '', major: '' },
+interface UserDataType {
+    name: string;
+    subteams: string[];
+    classOf: string;
+    major: string;
+}
+
+const data: UserDataType[] = [
+    { name: 'Abra Giddings', subteams: ['Systems', 'Brakes'], classOf: '', major: '' },
+    { name: 'Abraham Loren', subteams: ['CNC'], classOf: '', major: '' },
+    { name: 'AJ Williams', subteams: ['Frame', 'Suspension'], classOf: '', major: '' },
+    { name: 'Anthony Retelewski', subteams: ['Brakes'], classOf: '', major: '' },
+    { name: 'Ari Avalos', subteams: ['Frame'], classOf: '', major: '' },
+    { name: 'Arka Nath', subteams: ['Brakes'], classOf: '', major: '' },
+    { name: 'Aryeh Rothenberg', subteams: ['Manufacturing'], classOf: '', major: '' },
+    { name: 'Avaneesh Rao', subteams: ['Brakes', 'Suspension'], classOf: '', major: '' },
+    { name: 'Ben Roy', subteams: ['Test Engineering'], classOf: '', major: '' },
+    { name: 'Brendan Flanagan', subteams: ['CNC'], classOf: '', major: '' },
+    { name: 'Cameron Griffith', subteams: ['Manufacturing'], classOf: '', major: '' },
+    { name: 'Ciaran Nimick', subteams: ['Test Engineering'], classOf: '', major: '' },
+    { name: 'Cole Smith', subteams: ['Systems'], classOf: '', major: '' },
+    { name: 'Daniel de Dios Molina', subteams: [], classOf: '', major: '' },
+    { name: 'David Kaplan', subteams: [], classOf: '', major: '' },
+    { name: 'Eladov Kleinerman', subteams: ['CNC'], classOf: '', major: '' },
+    { name: 'Evan Grover', subteams: ['Systems'], classOf: '', major: '' },
+    { name: 'Evan Zhou', subteams: ['Manufacturing'], classOf: '', major: '' },
+    { name: 'Finn Barrett', subteams: [], classOf: '', major: '' },
+    { name: 'Gabriel Kenji Miyake', subteams: ['Frame'], classOf: '', major: '' },
+    { name: 'Giovanni Ricupero', subteams: ['Suspension'], classOf: '', major: '' },
+    { name: 'Isaac Hugenberger', subteams: ['Design'], classOf: '', major: '' },
+    { name: 'Jack Fink', subteams: ['Manufacturing'], classOf: '', major: '' },
+    { name: 'Jake Meltzer', subteams: ['Manufacturing'], classOf: '', major: '' },
+    { name: 'James Evans', subteams: ['Manufacturing'], classOf: '', major: '' },
+    { name: 'Jesse Nevling', subteams: ['Drivetrain'], classOf: '', major: '' },
+    { name: 'Jessica Shue', subteams: ['Frame'], classOf: '', major: '' },
+    { name: 'John Scherer', subteams: ['Frame'], classOf: '', major: '' },
+    { name: 'Jonah Keller', subteams: ['Manufacturing'], classOf: '', major: '' },
+    { name: 'Jonah Lorenzo', subteams: ['Systems'], classOf: '', major: '' },
+    { name: 'Karthik Rajasekar', subteams: ['Manufacturing'], classOf: '', major: '' },
+    { name: 'Kyle Rosenbaum', subteams: ['Manufacturing'], classOf: '', major: '' },
+    { name: 'Zach Wolf', subteams: ['Manufacturing'], classOf: '', major: '' },
+    { name: 'Zane Sandelin', subteams: ['Drivetrain'], classOf: '', major: '' },
 ];
 
 export function UsersTable() {
@@ -60,10 +66,20 @@ export function UsersTable() {
                 </Group>
             </Table.Td>
             <Table.Td className={styles.tableCell}>
-                <Badge color={jobColors[item.subteam] || 'gray'} variant="light">{item.subteam}</Badge>
+                <Group gap="xs">
+                    {item.subteams.map((subteam) => (
+                        <Badge
+                            key={subteam}
+                            color={jobColors[subteam] || 'gray'}
+                            variant="light"
+                        >
+                            {subteam}
+                        </Badge>
+                    ))}
+                </Group>
             </Table.Td>
             <Table.Td className={styles.tableCell}>
-                <Anchor component="button" size="sm">{item.year}</Anchor>
+                <Anchor component="button" size="sm">{item.classOf}</Anchor>
             </Table.Td>
             <Table.Td className={styles.tableCell}>
                 <Text fz="sm">{item.major}</Text>
@@ -78,7 +94,7 @@ export function UsersTable() {
                     <Table.Tr>
                         <Table.Th>Student</Table.Th>
                         <Table.Th>Subteam</Table.Th>
-                        <Table.Th>Year</Table.Th>
+                        <Table.Th>Class Of</Table.Th>
                         <Table.Th>Major</Table.Th>
                     </Table.Tr>
                 </Table.Thead>

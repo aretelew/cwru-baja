@@ -4,6 +4,7 @@ import { Text, Title } from '@mantine/core';
 import { Element } from 'react-scroll';
 import { useEffect, useState } from 'react';
 import styles from './Car.module.css';
+import { FadeIn } from '../../../components/FadeIn/FadeIn';
 
 export default function Car() {
     const [currentFrame, setCurrentFrame] = useState(1);
@@ -70,20 +71,34 @@ export default function Car() {
     return (
         <>
             <HeaderSimple />
+            <div className={styles.headerContainer}>
+                <FadeIn direction="up">
+                    <h1 className={styles.pageTitle}>THE 2024 CWRU MOTORSPORTS VEHICLE</h1>
+                </FadeIn>
+                <FadeIn direction="up" delay={0.1}>
+                    <div className={styles.introSection}>
+                        <Text className={styles.introParagraph}>
+                            Introducing the 2024 CWRU Motorsports competition vehicle, the SR24, a true marvel of engineering that embodies nine months of relentless dedication by our talented team. Designed to conquer the 2024 Baja SAE Collegiate Design Series competition, the SR24 represents a groundbreaking evolution in CWRU Motorsports' vehicle design history. The design for SR23 began June 2022 after the conclusion of the 2022 Baja SAE competition. The most notable change was the engine upgrade, transitioning to the 14hp Kohler Command Pro CH440 engine. A change away from the Briggs and Stratton Engine which had been in every SR model since the start of the team.
+                        </Text>
+                    </div>
+                </FadeIn>
+            </div>
             <div className={styles.contentContainer}>
                 <div className={styles.textContent}>
                     {carSpecs.map((section, sectionIndex) => (
-                        <Element name={`section-${sectionIndex}`} className={styles.section} key={sectionIndex}>
-                            <Title order={2}>{section.title}</Title>
-                            <div className={styles.specGrid}>
-                                {section.specs.map((spec, specIndex) => (
-                                    <div key={specIndex} className={styles.specRow}>
-                                        <Text className={styles.specName}>{spec.name}</Text>
-                                        <Text className={styles.specValue}>{spec.value}</Text>
-                                    </div>
-                                ))}
-                            </div>
-                        </Element>
+                        <FadeIn direction="up" delay={0.1 * sectionIndex} key={sectionIndex}>
+                            <Element name={`section-${sectionIndex}`} className={styles.section}>
+                                <Title order={2}>{section.title}</Title>
+                                <div className={styles.specGrid}>
+                                    {section.specs.map((spec, specIndex) => (
+                                        <div key={specIndex} className={styles.specRow}>
+                                            <Text className={styles.specName}>{spec.name}</Text>
+                                            <Text className={styles.specValue}>{spec.value}</Text>
+                                        </div>
+                                    ))}
+                                </div>
+                            </Element>
+                        </FadeIn>
                     ))}
                 </div>
                 <div className={styles.modelContainer}>

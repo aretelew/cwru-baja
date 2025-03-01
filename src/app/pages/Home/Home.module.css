@@ -27,10 +27,13 @@
 .aboutContainer {
     display: flex;
     justify-content: space-between;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 2.5rem;
     align-items: center;
     text-align: left;
     gap: 3rem;
-    margin: 2rem 0;
+    margin-bottom: 2rem;
 }
 
 .textContainer {
@@ -74,17 +77,11 @@
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-.aboutLink {
-    text-decoration: none;
-    display: inline-block;
-    color: var(--mantine-color-text);
-}
-
 .videoContainer {
     position: relative;
     width: 100%;
     max-width: 900px;
-    margin: 4rem auto;
+    margin: 0 auto;
     aspect-ratio: 16/9;
     border-radius: 12px;
     overflow: hidden;

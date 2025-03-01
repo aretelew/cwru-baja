@@ -1,6 +1,7 @@
 import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple.tsx';
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial.tsx';
 import { Container, Card, Text, Button } from '@mantine/core';
+import { FadeIn } from '../../../components/FadeIn/FadeIn';
 import {
   IconBrandInstagram,
   IconBrandYoutube,
@@ -46,44 +47,48 @@ const socialPlatforms = [
 
 export default function Social() {
   return (
-    <>
-      <div className={styles.headerContainer}>
-        <HeaderSimple />
-        <Container size="xl" style={{ padding: '40px 0' }}>
-            <h1 className={styles.redLineTitle}>Connect With Us</h1>          <div className={styles.gridContainer}>
-            {socialPlatforms.map((platform) => (
-              <Card
-                key={platform.name}
-                shadow="sm"
-                padding="xl"
-                className={styles.socialCard}
-              >
-                <Card.Section className={styles.iconSection}>
-                  <platform.icon size={48} color={platform.color} />
-                </Card.Section>
-                <Text fw={500} size="lg" mt="md">{platform.name}</Text>
-                <Text size="sm" c="dimmed" mt="sm">
-                  {platform.description}
-                </Text>
-                <Button
-                  component="a"
-                  href={platform.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  variant="light"
-                  fullWidth
-                  mt="md"
-                  radius="md"
-                  style={{ backgroundColor: platform.color, color: 'white' }}
-                >
-                  {platform.buttonText}
-                </Button>
-              </Card>
-            ))}
-          </div>
-        </Container>
-      </div>
-      <FooterSocial />
-    </>
+      <>
+        <div className={styles.headerContainer}>
+          <HeaderSimple />
+          <Container size="xl" style={{ padding: '40px 0' }}>
+            <FadeIn direction="up">
+              <h1 className={styles.redLineTitle}>Connect With Us</h1>
+            </FadeIn>
+            <div className={styles.gridContainer}>
+              {socialPlatforms.map((platform, index) => (
+                  <FadeIn key={platform.name} direction="up" delay={0.1 * index}>
+                    <Card
+                        shadow="sm"
+                        padding="xl"
+                        className={styles.socialCard}
+                    >
+                      <Card.Section className={styles.iconSection}>
+                        <platform.icon size={48} color={platform.color} />
+                      </Card.Section>
+                      <Text fw={500} size="lg" mt="md">{platform.name}</Text>
+                      <Text size="sm" c="dimmed" mt="sm">
+                        {platform.description}
+                      </Text>
+                      <Button
+                          component="a"
+                          href={platform.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          variant="light"
+                          fullWidth
+                          mt="md"
+                          radius="md"
+                          style={{ backgroundColor: platform.color, color: 'white' }}
+                      >
+                        {platform.buttonText}
+                      </Button>
+                    </Card>
+                  </FadeIn>
+              ))}
+            </div>
+          </Container>
+        </div>
+        <FooterSocial />
+      </>
   );
 }

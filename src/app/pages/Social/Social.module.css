@@ -37,7 +37,6 @@
 }
 
 .socialCard:hover {
-  transform: translateY(2px);
   outline: 2px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -50,11 +49,4 @@
 
 .socialCard button {
   transition: filter 0.2s ease;
-}
-
-
-@media (max-width: 768px) {
-  .gridContainer {
-    grid-template-columns: 1fr;
-  }
 }

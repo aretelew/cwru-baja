@@ -2,6 +2,7 @@ import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple.tsx'
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial.tsx';
 import { Container, Image } from '@mantine/core';
 import styles from './Support.module.css';
+import { FadeIn } from '../../../components/FadeIn/FadeIn.tsx';
 
 import foxLogo from '../../../assets/logo/sponsor/fox_logo.png';
 import altiumLogo from '../../../assets/logo/sponsor/altium_logo.png';
@@ -94,31 +95,33 @@ function SponsorTier({ title, sponsors, tierClass }: {
     tierClass: string;
 }) {
     return (
-        <div className={`${styles.tierSection} ${styles[tierClass]}`}>
-            <h2 className={styles.tierTitle}>{title} Sponsors</h2>
-            <div className={styles.sponsorsGrid}>
-                {sponsors.map((sponsor) => (
-                    <a
-                        key={sponsor.name}
-                        href={sponsor.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.sponsorLink}
-                    >
-                        <div className={styles.sponsorWrapper}>
-                            <Image
-                                src={sponsor.logo}
-                                alt={`${sponsor.name} logo`}
-                                className={`${styles.sponsorLogo} ${styles.dynamicScale}`}
-                                data-scale={sponsor.scale}
-                                fit="contain"
-                            />
-
-                        </div>
-                    </a>
-                ))}
+        <FadeIn>
+            <div className={`${styles.tierSection} ${styles[tierClass]}`}>
+                <h2 className={styles.tierTitle}>{title} Sponsors</h2>
+                <div className={styles.sponsorsGrid}>
+                    {sponsors.map((sponsor, index) => (
+                        <FadeIn key={sponsor.name} delay={index * 0.1}>
+                            <a
+                                href={sponsor.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={styles.sponsorLink}
+                            >
+                                <div className={styles.sponsorWrapper}>
+                                    <Image
+                                        src={sponsor.logo}
+                                        alt={`${sponsor.name} logo`}
+                                        className={`${styles.sponsorLogo} ${styles.dynamicScale}`}
+                                        data-scale={sponsor.scale}
+                                        fit="contain"
+                                    />
+                                </div>
+                            </a>
+                        </FadeIn>
+                    ))}
+                </div>
             </div>
-        </div>
+        </FadeIn>
     );
 }
 
@@ -128,7 +131,9 @@ export default function Support() {
             <div className={styles.headerContainer}>
                 <HeaderSimple />
                 <Container>
-                    <h1 className={styles.sponsorsTitle}>OUR VALUED SPONSORS</h1>
+                    <FadeIn>
+                        <h1 className={styles.sponsorsTitle}>OUR VALUED SPONSORS</h1>
+                    </FadeIn>
 
                     <SponsorTier
                         title="Ultimate"
