@@ -1,6 +1,7 @@
-.headerContainer {
-  display: flex;
-  flex-direction: column;
+.mainContainer {
+  max-width: 1200px;
+  justify-content: center;
+  margin: auto;
 }
 
 .redLineTitle {

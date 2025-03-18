@@ -1,10 +1,6 @@
-.headerContainer {
-    max-width: 1800px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin: 2rem auto;
-    padding: 0 2rem;
+.mainContainer {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .pageTitle {

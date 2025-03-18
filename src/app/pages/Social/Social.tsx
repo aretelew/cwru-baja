@@ -1,6 +1,6 @@
 import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple.tsx';
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial.tsx';
-import { Container, Card, Text, Button } from '@mantine/core';
+import { Card, Text, Button } from '@mantine/core';
 import { FadeIn } from '../../../components/FadeIn/FadeIn';
 import {
   IconBrandInstagram,
@@ -48,9 +48,9 @@ const socialPlatforms = [
 export default function Social() {
   return (
       <>
-        <div className={styles.headerContainer}>
-          <HeaderSimple />
-          <Container size="xl" style={{ padding: '40px 0' }}>
+        <HeaderSimple />
+        <div className={styles.mainContainer}>
+
             <FadeIn direction="up">
               <h1 className={styles.redLineTitle}>Connect With Us</h1>
             </FadeIn>
@@ -86,7 +86,6 @@ export default function Social() {
                   </FadeIn>
               ))}
             </div>
-          </Container>
         </div>
         <FooterSocial />
       </>

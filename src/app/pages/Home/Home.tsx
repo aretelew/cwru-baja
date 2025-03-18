@@ -7,15 +7,15 @@ import Autoplay from 'embla-carousel-autoplay';
 import myImage from '../../../assets/images/butler_bash_car_lineup.jpg';
 import styles from './Home.module.css';
 import '@mantine/carousel/styles.css';
-import { FadeIn } from '../../../components/FadeIn/FadeIn.tsx'; // Import the FadeIn component
+import { FadeIn } from '../../../components/FadeIn/FadeIn.tsx';
 
 export default function Home() {
     const autoplay = useRef(Autoplay({ delay: 4000 }));
 
     return (
         <>
-            <div className={styles.headerContainer}>
-                <HeaderSimple />
+            <HeaderSimple />
+            <div className={styles.mainContainer}>
                 <FadeIn>
                     <div className={styles.carouselContainer}>
                         <Carousel
@@ -42,7 +42,7 @@ export default function Home() {
                     <div className={styles.aboutContainer}>
                         <div className={styles.textContainer}>
                             <h1 id="about-us">About Us</h1>
-                            <Text size="lg" mb="xl" className={styles.p}>
+                            <Text size="xs" className={styles.p}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia,
                                 justo eu tincidunt facilisis, velit nisi pulvinar eros, vel convallis
                                 magna leo at odio. Praesent egestas, nisl vel commodo fermentum, justo

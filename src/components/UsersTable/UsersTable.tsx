@@ -21,7 +21,7 @@ interface UserDataType {
 }
 
 const data: UserDataType[] = [
-    { name: 'Abra Giddings', subteams: ['Systems', 'Brakes'], classOf: '2028', major: 'Computer Engineering/Science' },
+    { name: 'Abra Giddings', subteams: ['Systems', 'Brakes'], classOf: '2028', major: 'Computer Engineering & Computer Science' },
     { name: 'Abraham Loren', subteams: ['CNC'], classOf: '2028', major: 'Mechanical Engineering' },
     { name: 'AJ Williams', subteams: ['Frame', 'Suspension'], classOf: '2027', major: 'Mechanical Engineering' },
     { name: 'Anthony Retelewski', subteams: ['Brakes'], classOf: '2028', major: 'Computer Science' },
@@ -44,7 +44,7 @@ const data: UserDataType[] = [
     { name: 'Giovanni Ricupero', subteams: ['Suspension'], classOf: '2026', major: 'Mechanical Engineering' },
     { name: 'Isaac Hugenberger', subteams: ['Design'], classOf: '2028', major: 'Mechanical Engineering' },
     { name: 'Jack Fink', subteams: ['Manufacturing'], classOf: '2028', major: '?' },
-    { name: 'Jake Meltzer', subteams: ['Manufacturing'], classOf: '2028', major: 'Physics' },
+    { name: 'Jake Meltzer', subteams: ['Manufacturing'], classOf: '2028', major: 'Astronomy' },
     { name: 'James Evans', subteams: ['Manufacturing'], classOf: '2026', major: 'Mechanical Engineering' },
     { name: 'Jesse Nevling', subteams: ['Drivetrain'], classOf: '2028', major: 'Mechanical Engineering' },
     { name: 'Jessica Shue', subteams: ['Frame'], classOf: '?', major: 'Mechanical Engineering' },

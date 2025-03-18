@@ -1,14 +1,15 @@
 import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple.tsx';
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial.tsx';
-import { Container, Image, Text } from '@mantine/core';
+import { Image, Text } from '@mantine/core';
 import styles from './Team.module.css';
 import { UsersTable } from "../../../components/UsersTable/UsersTable.tsx";
-import { FadeIn } from '../../../components/FadeIn/FadeIn.tsx'; // Import the FadeIn component
+import { FadeIn } from '../../../components/FadeIn/FadeIn.tsx';
 import myImage from '../../../assets/images/butler_bash_car_lineup.jpg';
 import LMF04593 from '../../../assets/images/headshots/LMF04593.jpg';
 import LMF04533 from '../../../assets/images/headshots/LMF04533.jpg';
 import LMF04640 from '../../../assets/images/headshots/LMF04640.jpg';
 import LMF04651 from '../../../assets/images/headshots/LMF04651.jpg';
+import LMF04502 from '../../../assets/images/headshots/LMF04502.jpg';
 import LMF04525 from '../../../assets/images/headshots/LMF04525.jpg';
 import LMF04560 from '../../../assets/images/headshots/LMF04560.jpg';
 import LMF04478 from '../../../assets/images/headshots/LMF04478.jpg';
@@ -24,6 +25,8 @@ import LMF04655 from '../../../assets/images/headshots/LMF04655.jpg';
 import LMF04466 from '../../../assets/images/headshots/LMF04466.jpg';
 import LMF04721 from '../../../assets/images/headshots/LMF04721.jpg';
 import LMF04619 from '../../../assets/images/headshots/LMF04619.jpg';
+import LMF04673 from '../../../assets/images/headshots/LMF04673.jpg';
+import { HeroSection } from '../../../components/HeroSection/HeroSection.tsx';
 
 type MemberType = {
     name: string;
@@ -45,23 +48,30 @@ const executiveBoard: MemberType[] = [
         name: "Liam Flanagan",
         role: "Technical Lead",
         img: LMF04533,
-        graduationYear: "2026",
+        graduationYear: "2025",
         linkedin: "https://www.linkedin.com/in/liam-f"
     },
     {
         name: "Arnav Manu",
         role: "President",
         img: LMF04640,
-        graduationYear: "2025",
+        graduationYear: "2026",
         linkedin: "https://www.linkedin.com/in/arnav-manu-667444253/"
     },
     {
         name: "Amy Budzichowski",
         role: "President",
         img: LMF04651,
-        graduationYear: "2024",
+        graduationYear: "2026",
         linkedin: "https://www.linkedin.com/in/amy-budzichowski/"
     },
+    {
+        name: "Anish Khot",
+        role: "President",
+        img: LMF04502,
+        graduationYear: "2025",
+        linkedin: "https://www.linkedin.com/in/anishkhot/"
+    }
 ];
 
 const operationsBoard: MemberType[] = [
@@ -76,14 +86,14 @@ const operationsBoard: MemberType[] = [
         name: "Auston Govender",
         role: "Brakes & Throttle Lead",
         img: LMF04525,
-        graduationYear: "2027",
+        graduationYear: "2026",
         linkedin: "https://www.linkedin.com/in/auston-govender/"
     },
     {
         name: "Ammar Ali Asghar",
         role: "Rear Drivetrain Lead",
         img: LMF04478,
-        graduationYear: "2025",
+        graduationYear: "2026",
         linkedin: "https://www.linkedin.com/in/ammar-ali-asghar-8129b524b/"
     },
     {
@@ -125,7 +135,7 @@ const operationsBoard: MemberType[] = [
         name: "Shelley Wei",
         role: "Systems Lead",
         img: LMF04542,
-        graduationYear: "2025",
+        graduationYear: "2027",
         linkedin: "https://www.linkedin.com/in/shelleyywei/"
     },
     {
@@ -133,7 +143,7 @@ const operationsBoard: MemberType[] = [
         role: "Systems Lead",
         img: LMF04690,
         graduationYear: "2025",
-        linkedin: ""
+        linkedin: "https://www.linkedin.com/company/cwru-motorsports/"
     },
 ];
 
@@ -142,15 +152,15 @@ const specialtyLeads: MemberType[] = [
         name: "Lucy Ma",
         role: "President",
         img: LMF04627,
-        graduationYear: "2026",
+        graduationYear: "2027",
         linkedin: "https://www.linkedin.com/in/lucyma-/"
     },
     {
         name: "Ari Avalos",
         role: "Welding Lead",
-        img: myImage,
-        graduationYear: "2026",
-        linkedin: ""
+        img: LMF04673,
+        graduationYear: "2025",
+        linkedin: "https://www.linkedin.com/company/cwru-motorsports/"
     },
     {
         name: "Kenji Miyake",
@@ -163,7 +173,7 @@ const specialtyLeads: MemberType[] = [
         name: "Joshua Stout",
         role: "President",
         img: LMF04466,
-        graduationYear: "2026",
+        graduationYear: "2027",
         linkedin: "https://www.linkedin.com/in/joshua-martin-stout/"
     },
     {
@@ -237,7 +247,6 @@ function Member({ name, role, img, graduationYear, linkedin }: MemberType) {
     );
 }
 
-// Function to create staggered fade-in effects for members
 function MembersList({ members }: { members: MemberType[] }) {
     return (
         <div className={styles.membersContainer}>
@@ -258,13 +267,13 @@ function MembersList({ members }: { members: MemberType[] }) {
 export default function Team() {
     return (
         <>
-            <div className={styles.headerContainer}>
-                <HeaderSimple />
-                <Container className={styles.pageContent}>
-                    <FadeIn direction="up">
-                        <h1 className={styles.pageTitle}>2024-2025 CWRU MOTORSPORTS TEAM</h1>
-                    </FadeIn>
-
+            <HeaderSimple />
+                <div className={styles.mainContainer}>
+                    <HeroSection
+                        backgroundImage={myImage}
+                        title={`MEET THE TEAM`}
+                        subtitle={"2024 - 2025"}
+                    />
                     <FadeIn direction="up" delay={0.1}>
                         <div className={styles.section}>
                             <h2 className={styles.sectionTitle}>Executive Board</h2>
@@ -292,8 +301,7 @@ export default function Team() {
                             <UsersTable />
                         </div>
                     </FadeIn>
-                </Container>
-            </div>
+                </div>
             <FooterSocial />
         </>
     );

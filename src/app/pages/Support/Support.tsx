@@ -26,6 +26,18 @@ const sponsors = {
             url: "https://sponsor2.com",
             scale: 1.25
         },
+        {
+            name: "Ultimate Sponsor 2",
+            logo: altiumLogo,
+            url: "https://sponsor2.com",
+            scale: 1.25
+        },
+        {
+            name: "Ultimate Sponsor 2",
+            logo: altiumLogo,
+            url: "https://sponsor2.com",
+            scale: 1.25
+        },
     ],
     platinum: [
         {
@@ -60,7 +72,24 @@ const sponsors = {
             url: "https://sponsor6.com",
             scale: 1.0
         },
-        // ... other gold sponsors
+        {
+            name: "Gold Sponsor 1",
+            logo: jergensLogo,
+            url: "https://sponsor6.com",
+            scale: 1.0
+        },
+        {
+            name: "Gold Sponsor 1",
+            logo: jergensLogo,
+            url: "https://sponsor6.com",
+            scale: 1.0
+        },
+        {
+            name: "Gold Sponsor 1",
+            logo: jergensLogo,
+            url: "https://sponsor6.com",
+            scale: 1.0
+        },
     ],
     silver: [
         {
@@ -128,9 +157,8 @@ function SponsorTier({ title, sponsors, tierClass }: {
 export default function Support() {
     return (
         <>
-            <div className={styles.headerContainer}>
-                <HeaderSimple />
-                <Container>
+            <HeaderSimple />
+                <Container className={styles.mainContainer}>
                     <FadeIn>
                         <h1 className={styles.sponsorsTitle}>OUR VALUED SPONSORS</h1>
                     </FadeIn>
@@ -161,7 +189,6 @@ export default function Support() {
                         tierClass="bronze"
                     />
                 </Container>
-            </div>
             <FooterSocial />
         </>
     );
