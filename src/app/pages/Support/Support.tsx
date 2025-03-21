@@ -10,6 +10,8 @@ import altairLogo from '../../../assets/logo/sponsor/altair_logo.png';
 import bmtLogo from '../../../assets/logo/sponsor/bmt_logo.png';
 import kissoftLogo from '../../../assets/logo/sponsor/kissoft_logo.png';
 import jergensLogo from '../../../assets/logo/sponsor/jergens_logo.png';
+import {HeroSection} from "../../../components/HeroSection/HeroSection.tsx";
+import myImage from "../../../assets/images/butler_bash_car_lineup.jpg";
 
 
 const sponsors = {
@@ -159,9 +161,10 @@ export default function Support() {
         <>
             <HeaderSimple />
                 <Container className={styles.mainContainer}>
-                    <FadeIn>
-                        <h1 className={styles.sponsorsTitle}>OUR VALUED SPONSORS</h1>
-                    </FadeIn>
+                    <HeroSection
+                        backgroundImage={myImage}
+                        title={`SPONSORS`}
+                    />
 
                     <SponsorTier
                         title="Ultimate"

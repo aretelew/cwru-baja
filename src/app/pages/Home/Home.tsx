@@ -1,43 +1,24 @@
-import { useRef } from 'react';
 import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple.tsx';
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial.tsx';
-import { Carousel } from '@mantine/carousel';
 import { Image, Text, Button, Group, Box } from '@mantine/core';
-import Autoplay from 'embla-carousel-autoplay';
 import myImage from '../../../assets/images/butler_bash_car_lineup.jpg';
 import styles from './Home.module.css';
 import '@mantine/carousel/styles.css';
 import { FadeIn } from '../../../components/FadeIn/FadeIn.tsx';
+import heroImage from "../../../assets/images/LMF04266.jpg";
+import { HeroSection } from "../../../components/HeroSection/HeroSection.tsx";
 
 export default function Home() {
-    const autoplay = useRef(Autoplay({ delay: 4000 }));
+    // const autoplay = useRef(Autoplay({ delay: 4000 }));
 
     return (
         <>
             <HeaderSimple />
             <div className={styles.mainContainer}>
-                <FadeIn>
-                    <div className={styles.carouselContainer}>
-                        <Carousel
-                            withIndicators
-                            slideSize={{ base: '100%', sm: '70%', md: '40%' }}
-                            height="100%"
-                            draggable={true}
-                            plugins={[autoplay.current]}
-                            onMouseEnter={autoplay.current.stop}
-                            onMouseLeave={autoplay.current.reset}
-                            slideGap="xs"
-                            loop
-                        >
-                            <Carousel.Slide><Image radius="md" src={myImage} /></Carousel.Slide>
-                            <Carousel.Slide><Image radius="md" src={myImage} /></Carousel.Slide>
-                            <Carousel.Slide><Image radius="md" src={myImage} /></Carousel.Slide>
-                            <Carousel.Slide><Image radius="md" src={myImage} /></Carousel.Slide>
-                            <Carousel.Slide><Image radius="md" src={myImage} /></Carousel.Slide>
-                        </Carousel>
-                    </div>
-                </FadeIn>
-
+                <HeroSection
+                    backgroundImage={myImage}
+                    title={`CWRU MOTORSPORTS`}
+                />
                 <FadeIn direction="up" delay={0.2}>
                     <div className={styles.aboutContainer}>
                         <div className={styles.textContainer}>

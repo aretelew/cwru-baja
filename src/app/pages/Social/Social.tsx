@@ -9,6 +9,10 @@ import {
   IconBrandLinkedin
 } from '@tabler/icons-react';
 import styles from './Social.module.css';
+import { HeroSection } from "../../../components/HeroSection/HeroSection.tsx";
+// import myImage from "../../../assets/images/butler_bash_car_lineup.jpg";
+import heroImage from "../../../assets/images/LMF03065.jpg";
+
 
 const socialPlatforms = [
   {
@@ -50,10 +54,11 @@ export default function Social() {
       <>
         <HeaderSimple />
         <div className={styles.mainContainer}>
-
-            <FadeIn direction="up">
-              <h1 className={styles.redLineTitle}>Connect With Us</h1>
-            </FadeIn>
+          <HeroSection
+              backgroundImage={heroImage}
+              title={`CONNECT WITH US`}
+              verticalPosition="40%"
+          />
             <div className={styles.gridContainer}>
               {socialPlatforms.map((platform, index) => (
                   <FadeIn key={platform.name} direction="up" delay={0.1 * index}>

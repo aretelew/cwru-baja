@@ -4,7 +4,11 @@ import { Image, Text } from '@mantine/core';
 import styles from './Team.module.css';
 import { UsersTable } from "../../../components/UsersTable/UsersTable.tsx";
 import { FadeIn } from '../../../components/FadeIn/FadeIn.tsx';
+import { HeroSection } from '../../../components/HeroSection/HeroSection.tsx';
+
 import myImage from '../../../assets/images/butler_bash_car_lineup.jpg';
+import heroImage from '../../../assets/images/LMF04266.jpg';
+
 import LMF04593 from '../../../assets/images/headshots/LMF04593.jpg';
 import LMF04533 from '../../../assets/images/headshots/LMF04533.jpg';
 import LMF04640 from '../../../assets/images/headshots/LMF04640.jpg';
@@ -26,7 +30,7 @@ import LMF04466 from '../../../assets/images/headshots/LMF04466.jpg';
 import LMF04721 from '../../../assets/images/headshots/LMF04721.jpg';
 import LMF04619 from '../../../assets/images/headshots/LMF04619.jpg';
 import LMF04673 from '../../../assets/images/headshots/LMF04673.jpg';
-import { HeroSection } from '../../../components/HeroSection/HeroSection.tsx';
+
 
 type MemberType = {
     name: string;
@@ -46,28 +50,28 @@ const executiveBoard: MemberType[] = [
     },
     {
         name: "Liam Flanagan",
-        role: "Technical Lead",
+        role: "Technical Director",
         img: LMF04533,
         graduationYear: "2025",
         linkedin: "https://www.linkedin.com/in/liam-f"
     },
     {
         name: "Arnav Manu",
-        role: "President",
+        role: "Finance Lead",
         img: LMF04640,
         graduationYear: "2026",
         linkedin: "https://www.linkedin.com/in/arnav-manu-667444253/"
     },
     {
         name: "Amy Budzichowski",
-        role: "President",
+        role: "Membership Lead",
         img: LMF04651,
         graduationYear: "2026",
         linkedin: "https://www.linkedin.com/in/amy-budzichowski/"
     },
     {
         name: "Anish Khot",
-        role: "President",
+        role: "Logistics Lead",
         img: LMF04502,
         graduationYear: "2025",
         linkedin: "https://www.linkedin.com/in/anishkhot/"
@@ -105,7 +109,7 @@ const operationsBoard: MemberType[] = [
     },
     {
         name: "Jordan Haight",
-        role: "Test Engineering",
+        role: "Test Engineering Lead",
         img: LMF04589,
         graduationYear: "2026",
         linkedin: "https://www.linkedin.com/in/jordanhaight/"
@@ -126,21 +130,21 @@ const operationsBoard: MemberType[] = [
     },
     {
         name: "Devin Korybski",
-        role: "Systems Lead",
+        role: "Frame Lead",
         img: LMF04606,
         graduationYear: "2025",
         linkedin: "https://www.linkedin.com/in/devin-korybski-34835a28a/"
     },
     {
         name: "Shelley Wei",
-        role: "Systems Lead",
+        role: "Manufacturing Lead",
         img: LMF04542,
         graduationYear: "2027",
         linkedin: "https://www.linkedin.com/in/shelleyywei/"
     },
     {
         name: "Collin Lorenzen",
-        role: "Systems Lead",
+        role: "Testing Lead",
         img: LMF04690,
         graduationYear: "2025",
         linkedin: "https://www.linkedin.com/company/cwru-motorsports/"
@@ -150,7 +154,7 @@ const operationsBoard: MemberType[] = [
 const specialtyLeads: MemberType[] = [
     {
         name: "Lucy Ma",
-        role: "President",
+        role: "MAYBE COST REPORT",
         img: LMF04627,
         graduationYear: "2027",
         linkedin: "https://www.linkedin.com/in/lucyma-/"
@@ -164,28 +168,28 @@ const specialtyLeads: MemberType[] = [
     },
     {
         name: "Kenji Miyake",
-        role: "President",
+        role: "Radio Lead",
         img: LMF04655,
         graduationYear: "2026",
         linkedin: "https://www.linkedin.com/in/gabrielkenjimiyake/"
     },
     {
         name: "Joshua Stout",
-        role: "President",
+        role: "Buisness Presentation",
         img: LMF04466,
         graduationYear: "2027",
         linkedin: "https://www.linkedin.com/in/joshua-martin-stout/"
     },
     {
         name: "Jessica Shue",
-        role: "President",
+        role: "Documentation Lead",
         img: LMF04721,
         graduationYear: "2026",
         linkedin: "https://www.linkedin.com/in/jessica-s-7b7935268/"
     },
     {
         name: "John Scherer",
-        role: "President",
+        role: "Engine Lead",
         img: LMF04619,
         graduationYear: "2027",
         linkedin: "https://www.linkedin.com/in/john-scherer-299264300/"
@@ -270,7 +274,7 @@ export default function Team() {
             <HeaderSimple />
                 <div className={styles.mainContainer}>
                     <HeroSection
-                        backgroundImage={myImage}
+                        backgroundImage={heroImage}
                         title={`MEET THE TEAM`}
                         subtitle={"2024 - 2025"}
                     />

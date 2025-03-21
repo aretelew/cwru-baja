@@ -4,7 +4,8 @@ import { FooterSocial } from '../../../components/FooterSocial/FooterSocial';
 import { FadeIn } from '../../../components/FadeIn/FadeIn';
 import styles from './Competition.module.css';
 import { HeroSection } from '../../../components/HeroSection/HeroSection';
-import myImage from '../../../assets/images/butler_bash_car_lineup.jpg';
+// import myImage from '../../../assets/images/butler_bash_car_lineup.jpg';
+import heroImage from '../../../assets/images/LMF02976.jpg';
 
 const Award = ({ text }: { text: string }) => {
     const match = text.match(/(\d+)[A-Z]+\s+PLACE\s+(.+)/i);
@@ -271,9 +272,9 @@ export default function Competition() {
             <HeaderSimple />
             <div className={styles.mainContainer}>
                 <HeroSection
-                    backgroundImage={myImage}
+                    backgroundImage={heroImage}
                     title={"THE BAJA SAE COLLEGIATE DESIGN SERIES"}
-                    subtitle={""}
+                    verticalPosition="80%"
                 />
                 <FadeIn direction="up" delay={0.1}>
                     <div className={styles.introSection}>

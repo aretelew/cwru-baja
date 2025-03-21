@@ -5,6 +5,7 @@ import { FadeIn } from '../../../components/FadeIn/FadeIn';
 import { HeroSection } from '../../../components/HeroSection/HeroSection';
 import styles from './Car2.module.css';
 
+import heroImage from '../../../assets/images/LMF02810.jpg';
 import myImage from '../../../assets/images/butler_bash_car_lineup.jpg';
 
 export default function Car() {
@@ -110,9 +111,10 @@ export default function Car() {
         <HeaderSimple />
         <div className={styles.mainContainer}>
           <HeroSection
-              backgroundImage={myImage}
-              title={`THE ${carData.year} CWRU MOTORSPORTS VEHICLE`}
+              backgroundImage={heroImage}
+              title={`THE CWRU MOTORSPORTS VEHICLE`}
               subtitle={carData.name}
+              verticalPosition="60%"
           />
             <FadeIn direction="up">
               <Text className={styles.introText}>
