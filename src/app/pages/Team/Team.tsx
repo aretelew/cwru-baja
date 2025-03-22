@@ -30,7 +30,7 @@ import LMF04466 from '../../../assets/images/headshots/LMF04466.jpg';
 import LMF04721 from '../../../assets/images/headshots/LMF04721.jpg';
 import LMF04619 from '../../../assets/images/headshots/LMF04619.jpg';
 import LMF04673 from '../../../assets/images/headshots/LMF04673.jpg';
-
+import LMF04762 from '../../../assets/images/headshots/LMF04762.jpg';
 
 type MemberType = {
     name: string;
@@ -197,7 +197,7 @@ const specialtyLeads: MemberType[] = [
     {
         name: "Anthony Retelewski",
         role: "Website Lead",
-        img: myImage,
+        img: LMF04762,
         graduationYear: "2028",
         linkedin: "https://www.linkedin.com/in/anthony-retelewski-4340402aa/"
     },

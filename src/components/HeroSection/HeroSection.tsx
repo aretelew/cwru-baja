@@ -8,7 +8,7 @@ interface HeroSectionProps {
   subtitle?: string;
   className?: string;
   maxWidth?: string | number;
-  verticalPosition?: string | number; // Renamed parameter to be more specific
+  verticalPosition?: string | number;
 }
 
 export function HeroSection({
@@ -17,10 +17,9 @@ export function HeroSection({
   subtitle,
   className,
   maxWidth = "xl",
-  verticalPosition = "center" // Default to center positioning
+  verticalPosition = "center"
 }: HeroSectionProps) {
 
-  // Always center horizontally, but allow vertical position to be controlled
   const imageStyle = {
     objectPosition: `center ${verticalPosition}`
   };
@@ -36,9 +35,7 @@ export function HeroSection({
       />
       <Container size={maxWidth} className={styles.heroContent}>
         <FadeIn direction="up">
-          <Title className={styles.heroTitle} size="h1">{title}</Title>
-          {subtitle && (
-            <Title order={2} className={styles.heroSubtitle}>{subtitle}</Title>
+          <Title size="3rem" className={styles.heroTitle}>{title}</Title>{subtitle && (<Title order={2} className={styles.heroSubtitle}>{subtitle}</Title>
           )}
         </FadeIn>
       </Container>

@@ -38,11 +38,18 @@
 }
 
 .heroTitle {
-  font-size: 3.5rem;
+  font-size: 5rem; /* Increased from 3.5rem */
   font-weight: 800;
   color: white;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
   margin-bottom: 1rem;
+  line-height: 1.1; /* Better line height for larger text */
+}
+
+@media (max-width: 992px) {
+  .heroTitle {
+    font-size: 3.5rem; /* Adjusted for mobile */
+  }
 }
 
 .heroSubtitle {
