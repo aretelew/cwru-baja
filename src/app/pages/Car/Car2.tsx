@@ -1,12 +1,15 @@
 import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple';
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial';
-import { Text, Title, Image, Tabs, ScrollArea } from '@mantine/core';
-import { FadeIn } from '../../../components/FadeIn/FadeIn';
 import { HeroSection } from '../../../components/HeroSection/HeroSection';
+import { FadeIn } from '../../../components/FadeIn/FadeIn';
+import { Container, Title, Text, Image } from '@mantine/core';
 import styles from './Car2.module.css';
 
+// Import hero image
 import heroImage from '../../../assets/images/LMF02810.jpg';
-import myImage from '../../../assets/images/butler_bash_car_lineup.jpg';
+
+// Use hero image as a placeholder for section images until real ones are available
+const placeholderImage = heroImage;
 
 export default function Car() {
   const carData = {
@@ -16,13 +19,13 @@ export default function Car() {
       {
         key: "overview",
         title: "OVERVIEW",
-        image: myImage,
+        image: placeholderImage,
         description: "The SR24 represents the pinnacle of CWRU Motorsports engineering, designed and built over nine months for the 2024 Baja SAE Collegiate Design Series. This vehicle features significant upgrades from previous models, including a transition to the 14hp Kohler Command Pro CH440 engine—a departure from the Briggs and Stratton engines used in all previous SR models.",
       },
       {
         key: "frame",
         title: "FRAME",
-        image: myImage,
+        image: placeholderImage,
         description: "Our custom frame provides the foundation for our competition vehicle, designed for optimal strength-to-weight ratio and driver safety.",
         specs: [
           { name: 'Material', value: '4130N CrMo tubular structure' },
@@ -36,7 +39,7 @@ export default function Car() {
       {
         key: "front-suspension",
         title: "FRONT SUSPENSION",
-        image: myImage,
+        image: placeholderImage,
         description: "Our front suspension system delivers exceptional handling and terrain absorption capabilities.",
         specs: [
           { name: 'Suspension System', value: 'Double wishbones with custom upright and hub CNC-machined in-house' },
@@ -50,7 +53,7 @@ export default function Car() {
       {
         key: "rear-suspension",
         title: "REAR SUSPENSION",
-        image: myImage,
+        image: placeholderImage,
         description: "Our rear suspension system provides optimal traction and stability across challenging terrain.",
         specs: [
           { name: 'Suspension System', value: 'Semi-trailing arm with 3D-printed titanium load-bearing rear half-shaft produced by BMT Aerospace' },
@@ -64,7 +67,7 @@ export default function Car() {
       {
         key: "braking",
         title: "BRAKING SYSTEM",
-        image: myImage,
+        image: placeholderImage,
         description: "Our custom braking system delivers reliable stopping power and precise control.",
         specs: [
           { name: 'Braking System', value: 'Tilton dual master cylinder hydraulic system with Wilwood proportioning valve' },
@@ -78,7 +81,7 @@ export default function Car() {
       {
         key: "drivetrain",
         title: "DRIVETRAIN",
-        image: myImage,
+        image: placeholderImage,
         description: "Our powertrain system delivers optimal power transfer and efficiency for competition demands.",
         specs: [
           { name: 'Engine', value: '14hp Kohler Command Pro CH440 single-cylinder 4-stroke' },
@@ -92,7 +95,7 @@ export default function Car() {
       {
         key: "electronics",
         title: "ELECTRONICS",
-        image: myImage,
+        image: placeholderImage,
         description: "Our electrical systems provide reliable power distribution and data collection for vehicle optimization.",
         specs: [
           { name: 'Battery', value: 'Lithium iron phosphate (LiFePO4) 12V battery' },
@@ -107,77 +110,67 @@ export default function Car() {
   };
 
   return (
-      <>
-        <HeaderSimple />
-        <div className={styles.mainContainer}>
-          <HeroSection
-              backgroundImage={heroImage}
-              title={`THE CWRU MOTORSPORTS VEHICLE`}
-              subtitle={carData.name}
-              verticalPosition="60%"
-          />
-            <FadeIn direction="up">
-              <Text className={styles.introText}>
-                <h1 id="about-us">About</h1>
+    <>
+      <HeaderSimple />
+      <div className={styles.mainContainer}>
+        <HeroSection
+          style={{ backgroundImage: `url(${heroImage})` }}
+          title="CWRU MOTORSPORTS VEHICLE"
+          subtitle={carData.name}
+          verticalPosition="60%"
+        />
+
+        <Container size="xl" className={styles.carContainer}>
+          <FadeIn direction="up">
+            <div className={styles.carIntro}>
+              <Title order={1} className={styles.sectionMainTitle}>THE {carData.name} BAJA VEHICLE</Title>
+              <div className={styles.mainAccent}></div>
+              <Text className={styles.introDescription}>
                 {carData.sections[0].description}
               </Text>
-            </FadeIn>
-            <Tabs
-                defaultValue="overview"
-                className={styles.carTabs}
-                variant="outline"
-                radius="md"
-            >
-              <ScrollArea>
-                <Tabs.List className={styles.tabsList}>
-                  {carData.sections.map((section) => (
-                      <Tabs.Tab key={section.key} value={section.key} className={styles.tabButton}>
-                        {section.title}
-                      </Tabs.Tab>
-                  ))}
-                </Tabs.List>
-              </ScrollArea>
+            </div>
+          </FadeIn>
 
-              {carData.sections.map((section) => (
-                  <Tabs.Panel key={section.key} value={section.key} className={styles.tabPanel}>
-                    <FadeIn direction="up">
-                      <div className={styles.sectionContainer}>
-                        <div className={styles.sectionHeader}>
-                          <Title order={3} className={styles.sectionTitle}>{section.title}</Title>
-                          <div className={styles.sectionBorder}></div>
+          <div className={styles.carSections}>
+            {carData.sections.slice(1).map((section) => (
+              <FadeIn key={section.key} direction="up">
+                <div id={section.key} className={styles.carSection}>
+                  <div className={styles.sectionHeader}>
+                    <Title order={2} className={styles.sectionTitle}>{section.title}</Title>
+                    <div className={styles.sectionAccent}></div>
+                  </div>
+
+                  <div className={styles.sectionContent}>
+                    <div className={styles.sectionInfo}>
+                      <Text className={styles.sectionDescription}>{section.description}</Text>
+
+                      {section.specs && (
+                        <div className={styles.specsList}>
+                          {section.specs.map((spec, index) => (
+                            <div key={index} className={styles.specItem}>
+                              <Text component="span" className={styles.specName}>{spec.name}</Text>
+                              <Text component="span" className={styles.specValue}>{spec.value}</Text>
+                            </div>
+                          ))}
                         </div>
+                      )}
+                    </div>
 
-                        <div className={styles.sectionContent}>
-                          <div className={styles.sectionTextContent}>
-                            <Text className={styles.sectionDescription}>{section.description}</Text>
-                            {section.specs && (
-                                <div className={styles.specContainer}>
-                                  {section.specs.map((spec, index) => (
-                                      <div key={index} className={styles.specRow}>
-                                        <Text className={styles.specName}>{spec.name}</Text>
-                                        <Text className={styles.specValue}>{spec.value}</Text>
-                                      </div>
-                                  ))}
-                                </div>
-                            )}
-                          </div>
-
-                          <div className={styles.sectionImageWrapper}>
-                            <Image
-                                src={section.image}
-                                alt={section.title}
-                                radius="md"
-                                className={styles.sectionImage}
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </FadeIn>
-                  </Tabs.Panel>
-              ))}
-            </Tabs>
-          <FooterSocial />
-        </div>
-      </>
+                    <div className={styles.sectionImageContainer}>
+                      <img
+                          src={section.image}
+                          alt={section.title}
+                          className={styles.sectionImage}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
+        </Container>
+        <FooterSocial />
+      </div>
+    </>
   );
 }

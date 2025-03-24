@@ -35,7 +35,7 @@ export function HeroSection({
       />
       <Container size={maxWidth} className={styles.heroContent}>
         <FadeIn direction="up">
-          <Title size="3rem" className={styles.heroTitle}>{title}</Title>{subtitle && (<Title order={2} className={styles.heroSubtitle}>{subtitle}</Title>
+          <Title size="5rem" className={styles.heroTitle}>{title}</Title>{subtitle && (<Title order={2} size="2rem" className={styles.heroSubtitle}>{subtitle}</Title>
           )}
         </FadeIn>
       </Container>

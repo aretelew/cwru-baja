@@ -97,7 +97,6 @@ export default function Home() {
     return (
         <>
             <HeaderSimple />
-
             <div className={styles.mainContainer}>
                 <HeroSection backgroundImage={myImage} title="CWRU MOTORSPORTS" />
 
