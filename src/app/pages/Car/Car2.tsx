@@ -2,13 +2,11 @@ import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple';
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial';
 import { HeroSection } from '../../../components/HeroSection/HeroSection';
 import { FadeIn } from '../../../components/FadeIn/FadeIn';
-import { Container, Title, Text, Image } from '@mantine/core';
+import { Container, Title, Text } from '@mantine/core';
 import styles from './Car2.module.css';
 
-// Import hero image
 import heroImage from '../../../assets/images/LMF02810.jpg';
 
-// Use hero image as a placeholder for section images until real ones are available
 const placeholderImage = heroImage;
 
 export default function Car() {
@@ -114,7 +112,7 @@ export default function Car() {
       <HeaderSimple />
       <div className={styles.mainContainer}>
         <HeroSection
-          style={{ backgroundImage: `url(${heroImage})` }}
+          backgroundImage={heroImage}
           title="CWRU MOTORSPORTS VEHICLE"
           subtitle={carData.name}
           verticalPosition="60%"

@@ -14,7 +14,7 @@ export function FooterSocial() {
                         color="gray"
                         variant="subtle"
                         component="a"
-                        href="cnn.com"
+                        href="https://www.instagram.com/cwrubaja/?hl=en"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -25,7 +25,7 @@ export function FooterSocial() {
                         color="gray"
                         variant="subtle"
                         component="a"
-                        href="cnn.com"
+                        href="https://www.youtube.com/channel/UCbYI9bH2k-ggW2idGL_oSUA"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -36,7 +36,7 @@ export function FooterSocial() {
                         color="gray"
                         variant="subtle"
                         component="a"
-                        href="cnn.com"
+                        href="https://www.facebook.com/cwrubaja/"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
@@ -47,7 +47,7 @@ export function FooterSocial() {
                         color="gray"
                         variant="subtle"
                         component="a"
-                        href="https://www.instagram.com/yourprofile"
+                            href="https://www.linkedin.com/company/cwru-motorsports"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
