@@ -1,8 +1,38 @@
 .tableContainer {
-        width: 100%;
-        overflow-x: auto;
+    width: 100%;
+    overflow-x: auto;
+}
+
+.table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 .tableCell {
     text-align: left;
+}
+
+.table th:first-child,
+.table td:first-child {
+    padding-left: 1rem;
+}
+
+.table th:last-child,
+.table td:last-child {
+    padding-right: 1rem;
+    text-align: left;
+}
+
+.nameColumn,
+.majorColumn{
+    width: 25%;
+}
+
+.subteamColumn {
+    width: 30%;
+}
+
+.classColumn {
+    width: 20%;
 }

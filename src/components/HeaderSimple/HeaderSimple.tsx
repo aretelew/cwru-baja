@@ -1,54 +1,78 @@
 import { useState, useEffect } from 'react';
-import { Burger, Container, Group } from '@mantine/core';
+import { Burger, Container, Group, Drawer, Stack } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { useNavigate, useLocation } from 'react-router-dom';
 import classes from './HeaderSimple.module.css';
-import logo from '../../assets/logo/team/cwru_motorsports_white_no_text_logo.png';
+import logo from '../../assets/logo/team/cwru-motorsports-white-no-text-logo.png';
 
 const links = [
-    { link: '/', label: 'Home' },
-    { link: '/team', label: 'Team' },
-    { link: '/car', label: 'Car' },
-    { link: '/competition', label: 'Competition' },
-    { link: '/support', label: 'Support' },
-    { link: '/social', label: 'Social' }
+  { link: '/', label: 'Home' },
+  { link: '/team', label: 'Team' },
+  { link: '/car', label: 'Car' },
+  { link: '/competition', label: 'Competition' },
+  { link: '/support', label: 'Support' },
+  { link: '/social', label: 'Social' }
 ];
 
 export function HeaderSimple() {
-    const [opened, { toggle }] = useDisclosure(false);
-    const location = useLocation();
-    const [active, setActive] = useState(location.pathname);
-    const navigate = useNavigate();
+  const [opened, { toggle, close }] = useDisclosure(false);
+  const location = useLocation();
+  const [active, setActive] = useState(location.pathname);
+  const navigate = useNavigate();
 
-    useEffect(() => {
-        setActive(location.pathname);
-    }, [location.pathname]);
+  useEffect(() => {
+    setActive(location.pathname);
+  }, [location.pathname]);
 
-    const items = links.map((link) => (
-        <a
-            key={link.label}
-            href={link.link}
-            className={classes.link}
-            data-active={active === link.link || undefined}
-            onClick={(event) => {
-                event.preventDefault();
-                setActive(link.link);
-                navigate(link.link);
-            }}
+  const items = links.map((link) => (
+    <a
+      key={link.label}
+      href={link.link}
+      className={classes.link}
+      data-active={active === link.link || undefined}
+      onClick={(event) => {
+        event.preventDefault();
+        setActive(link.link);
+        navigate(link.link);
+        close();
+      }}
+    >
+      {link.label}
+    </a>
+  ));
+
+  return (
+    <header className={classes.header}>
+      <Container size="xl" className={classes.inner}>
+        <div
+          className={classes.logoContainer}
+          onClick={() => {
+            navigate('/');
+            setActive('/');
+            close();
+          }}
         >
-            {link.label}
-        </a>
-    ));
+          <img src={logo} alt="Logo" className={classes.logo} />
+        </div>
+        <Group gap={5} visibleFrom="xs">
+          {items}
+        </Group>
+        <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
 
-    return (
-        <header className={classes.header}>
-            <Container size="xl" className={classes.inner}>
-                <img src={logo} alt="Logo" style={{ height: 40 }} />
-                <Group gap={5} visibleFrom="xs">
-                    {items}
-                </Group>
-                <Burger opened={opened} onClick={toggle} hiddenFrom="xs" size="sm" />
-            </Container>
-        </header>
-    );
+        <Drawer
+          opened={opened}
+          onClose={close}
+          position="right"
+          hiddenFrom="xs"
+          title="Navigation"
+          padding="md"
+          size="md"
+        >
+          <Stack>
+            {items}
+          </Stack>
+        </Drawer>
+      </Container>
+    </header>
+  );
 }

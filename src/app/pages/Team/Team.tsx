@@ -1,12 +1,11 @@
-import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple.tsx';
-import { FooterSocial } from '../../../components/FooterSocial/FooterSocial.tsx';
 import { Image, Text } from '@mantine/core';
 import styles from './Team.module.css';
+
+import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple.tsx';
+import { FooterSocial } from '../../../components/FooterSocial/FooterSocial.tsx';
 import { UsersTable } from "../../../components/UsersTable/UsersTable.tsx";
 import { FadeIn } from '../../../components/FadeIn/FadeIn.tsx';
 import { HeroSection } from '../../../components/HeroSection/HeroSection.tsx';
-
-import myImage from '../../../assets/images/butler_bash_car_lineup.jpg';
 import heroImage from '../../../assets/images/LMF04266.jpg';
 
 import LMF04593 from '../../../assets/images/headshots/LMF04593.jpg';

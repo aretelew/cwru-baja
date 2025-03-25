@@ -1,9 +1,10 @@
+import styles from './Support.module.css';
+import { Container, Image } from '@mantine/core';
+
 import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple.tsx';
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial.tsx';
-import { Container, Image } from '@mantine/core';
-import styles from './Support.module.css';
 import { FadeIn } from '../../../components/FadeIn/FadeIn.tsx';
-import {HeroSection} from "../../../components/HeroSection/HeroSection.tsx";
+import { HeroSection } from "../../../components/HeroSection/HeroSection.tsx";
 import heroImage from "../../../assets/images/butler_bash_car_lineup.jpg";
 
 // ULTIMATE SPONSORS

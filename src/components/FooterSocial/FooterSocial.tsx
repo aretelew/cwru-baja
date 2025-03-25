@@ -1,7 +1,7 @@
 import { IconBrandInstagram, IconBrandYoutube, IconBrandFacebook, IconBrandLinkedin } from '@tabler/icons-react';
 import { ActionIcon, Container, Group } from '@mantine/core';
 import classes from './FooterSocial.module.css';
-import logo from '../../assets/logo/team/cwru_motorsports_white_logo.png';
+import logo from '../../assets/logo/team/cwru-motorsports-white-logo.png';
 
 export function FooterSocial() {
     return (

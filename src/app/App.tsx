@@ -14,35 +14,34 @@ const Competition = React.lazy(() => import('./pages/Competition/Competition.tsx
 const Social = React.lazy(() => import('./pages/Social/Social.tsx'));
 
 export const theme = createTheme({
-  fontFamily: 'Montserrat, sans-serif',
+  fontFamily: 'Rajdhani, sans-serif',
   headings: {
-    fontFamily: 'Rajdhani, sans-serif',
-    fontWeight: '600'
+    fontWeight: '650'
   },
   colors: {
     dark: [
-      '#ADADB0', // 0: Text on dark background (darker)
-            '#8F9095', // 1 (darker)
-            '#797B80', // 2 (darker)
-            '#4A4D54', // 3 (darker)
-            '#2A2C32', // 4 (darker)
-            '#212228', // 5 (darker)
-            '#1A1B20', // 6 (darker)
-            '#121316', // 7 (darker)
-            '#0D0E10', // 8 (darker)
-            '#08090A'  // 9: App background (darker)
+      '#ADADB0',
+      '#8F9095',
+      '#797B80',
+      '#4A4D54',
+      '#2A2C32',
+      '#212228',
+      '#1A1B20',
+      '#121316',
+      '#0D0E10',
+      '#08090A'
     ],
     red: [
-      '#FFE0E0', // 0
-      '#FFBABA', // 1
-      '#FF9494', // 2
-      '#FF6B6B', // 3
-      '#FF5252', // 4
-      '#FF3838', // 5
-      '#FF1F1F', // 6
-      '#E60000', // 7: Active state
-      '#C00000', // 8
-      '#9A0000'  // 9
+      '#FFE0E0',
+      '#FFBABA',
+      '#FF9494',
+      '#FF6B6B',
+      '#FF5252',
+      '#FF3838',
+      '#FF1F1F',
+      '#E60000',
+      '#C00000',
+      '#9A0000'
     ]
   },
   primaryColor: 'red',

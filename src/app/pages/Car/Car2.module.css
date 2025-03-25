@@ -180,7 +180,7 @@
 
 .specName {
     font-weight: 700;
-    color: var(--mantine-color-white);
+    color: white;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.5px;
