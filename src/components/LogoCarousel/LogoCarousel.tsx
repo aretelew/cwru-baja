@@ -2,7 +2,7 @@ import styles from './LogoCarousel.module.css';
 
 interface LogoCarouselProps {
   logos: string[];
-  links?: string[]; // Optional array of sponsor links
+  links?: string[];
 }
 
 export const LogoCarousel = ({ logos, links = [] }: LogoCarouselProps) => {

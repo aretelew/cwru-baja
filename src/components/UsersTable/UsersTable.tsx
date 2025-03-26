@@ -25,7 +25,6 @@ const data: UserDataType[] = [
     { name: 'Abraham Loren', subteams: ['CNC'], classOf: '2028', major: 'Mechanical Engineering' },
     { name: 'AJ Williams', subteams: ['Frame', 'Suspension'], classOf: '2027', major: 'Mechanical Engineering' },
     { name: 'Anthony Retelewski', subteams: ['Brakes'], classOf: '2028', major: 'Computer Science' },
-    { name: 'Ari Avalos', subteams: ['Frame'], classOf: '2025', major: 'Electrical Engineering' },
     { name: 'Arka Nath', subteams: ['Brakes'], classOf: '2027', major: 'Mechanical Engineering' },
     { name: 'Aryeh Rothenberg', subteams: ['Manufacturing'], classOf: '2027', major: 'Mechanical Engineering' },
     { name: 'Avaneesh Rao', subteams: ['Brakes', 'Suspension'], classOf: '2027', major: 'Mechanical Engineering' },

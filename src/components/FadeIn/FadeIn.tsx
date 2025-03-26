@@ -10,20 +10,38 @@ interface FadeInProps {
 }
 
 export const FadeIn = ({
-                           children,
-                           delay = 0,
-                           direction = 'up',
-                           distance = 30,
-                           threshold = 0.1
-                       }: FadeInProps) => {
+       children,
+       delay = 0,
+       direction = 'up',
+       distance = 30,
+       threshold = 0.1
+   }: FadeInProps) => {
     const [isVisible, setIsVisible] = useState(false);
+    const [noTransition, setNoTransition] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
+    const lastScrollY = useRef<number>(0);
+    const isScrollingDown = useRef<boolean>(true);
 
     useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY;
+            isScrollingDown.current = currentScrollY > lastScrollY.current;
+            lastScrollY.current = currentScrollY;
+        };
+
+        lastScrollY.current = window.scrollY;
+        window.addEventListener('scroll', handleScroll);
+
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {
-                    setIsVisible(true);
+                    if (isScrollingDown.current) {
+                        setNoTransition(false);
+                        setIsVisible(true);
+                    } else {
+                        setNoTransition(true);
+                        setIsVisible(true);
+                    }
                     observer.disconnect();
                 }
             },
@@ -43,10 +61,10 @@ export const FadeIn = ({
             if (currentRef) {
                 observer.unobserve(currentRef);
             }
+            window.removeEventListener('scroll', handleScroll);
         };
     }, [threshold]);
 
-    // Determine the initial transform based on direction
     let transform = 'translateY(0)';
     if (direction === 'up') transform = `translateY(${distance}px)`;
     if (direction === 'down') transform = `translateY(-${distance}px)`;
@@ -60,8 +78,10 @@ export const FadeIn = ({
             style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translate(0)' : transform,
-                transition: `opacity 0.6s ease-out, transform 0.6s ease-out`,
-                transitionDelay: `${delay}s`
+                transition: noTransition
+                    ? 'none'
+                    : `opacity 0.6s ease-out, transform 0.6s ease-out`,
+                transitionDelay: noTransition ? '0s' : `${delay}s`
             }}
         >
             {children}

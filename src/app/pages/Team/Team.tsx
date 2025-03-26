@@ -279,7 +279,7 @@ export default function Team() {
                     />
                     <FadeIn direction="up" delay={0.1}>
                         <div className={styles.section}>
-                            <h2 className={styles.sectionTitle}>Executive Board</h2>
+                            <h1 className={styles.sectionTitle}>Executive Board</h1>
                             <MembersList members={executiveBoard} />
                         </div>
                     </FadeIn>

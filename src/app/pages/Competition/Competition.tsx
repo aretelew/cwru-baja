@@ -273,11 +273,12 @@ export default function Competition() {
             <div className={styles.mainContainer}>
                 <HeroSection
                     backgroundImage={heroImage}
-                    title={"THE BAJA SAE COLLEGIATE DESIGN SERIES"}
+                    title={"COMPETITION"}
                     verticalPosition="80%"
                 />
                 <FadeIn direction="up" delay={0.1}>
                     <div className={styles.introSection}>
+                        <h1 className={styles.introTitle}>THE BAJA SAE COLLEGIATE DESIGN SERIES</h1>
                         <Text className={styles.introParagraph}>
                             Sanctioned by the Society of Automotive Engineers (SAE), the Baja SAE collegiate design series was founded in 1976 with the purpose of offering real-world engineering experience to students from universities around the world.
                             Student teams are challenged to design and manufacture a high-performance, single-seat off-road vehicle that is aimed at the recreational user market and conforms to the comprehensive Baja SAE rulebook.
@@ -291,9 +292,9 @@ export default function Competition() {
 
                 <FadeIn direction="up" delay={0.1}>
                     <div className={styles.accomplishmentsSection}>
-                        <Title order={2} className={styles.accomplishmentsTitle}>
+                        <h1 className={styles.accomplishmentsTitle}>
                             THE TEAM'S GROWING LIST OF ACCOMPLISHMENTS
-                        </Title>
+                        </h1>
                         {seasons.map((season, index) => (
                             <SeasonSection
                                 key={index}

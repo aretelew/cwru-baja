@@ -31,9 +31,13 @@
     border-radius: 8px;
     padding: 2.5rem;
     align-items: center;
-    text-align: left;
+    text-align: center;
     gap: 3rem;
     margin-bottom: 2rem;
+}
+
+.aboutTitle {
+    color: white;
 }
 
 .textContainer {
@@ -48,10 +52,11 @@
 }
 
 .textContainer h1::after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100px;
     height: 3px;
     background: var(--mantine-color-red-6);
