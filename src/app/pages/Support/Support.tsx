@@ -62,245 +62,245 @@ import alro from '../../../assets/logo/sponsor/svg/alro.svg';
 const sponsors = {
     ultimate: [
         {
-            name: "Ultimate Sponsor 1",
+            name: "Fox",
             logo: fox,
-            url: "https://sponsor1.com",
+            url: "https://ridefox.com/",
             scale: 1
         },
         {
-            name: "Ultimate Sponsor 2",
+            name: "BMT Aerospace",
             logo: bmt,
-            url: "https://sponsor2.com",
+            url: "https://bmtaerospace.com/",
             scale: 1
         },
         {
-            name: "Ultimate Sponsor 2",
+            name: "Enterline Foundation",
             logo: enterline,
-            url: "https://sponsor2.com",
+            url: "https://enterlinefoundation.org/",
             scale: 1
         },
         {
-            name: "Ultimate Sponsor 2",
+            name: "Stifel",
             logo: stifel,
-            url: "https://sponsor2.com",
+            url: "https://www.stifel.com/",
             scale: 1
         },
         {
-            name: "Ultimate Sponsor 2",
+            name: "Case Alumni Association",
             logo: caseAlumniAssociation,
-            url: "https://sponsor2.com",
+            url: "https://casealumni.org/",
             scale: 1.25
         },
     ],
     platinum: [
         {
-            name: "Platinum Sponsor 1",
+            name: "Speed Metals",
             logo: speedMetals,
-            url: "https://sponsor3.com",
+            url: "https://speedmetals.com/",
             scale: 1
         },
         {
-            name: "Platinum Sponsor 2",
+            name: "Siemens",
             logo: siemens,
-            url: "https://sponsor4.com",
+            url: "https://www.siemens.com/global/en.html",
             scale: 1
         },
         {
-            name: "Platinum Sponsor 3",
+            name: "Altium",
             logo: altium,
-            url: "https://sponsor5.com",
+            url: "https://www.altium.com/",
             scale: 1.0
         },
         {
-            name: "Platinum Sponsor 3",
+            name: "Parker",
             logo: parker,
-            url: "https://sponsor5.com",
+            url: "https://www.parker.com/us/en/home.html",
             scale: 1.0
         },
     ],
     gold: [
         {
-            name: "Gold Sponsor 1",
+            name: "Jergens",
             logo: jergens,
-            url: "https://sponsor6.com",
+            url: "https://www.jergensinc.com/",
             scale: 1.0
         },
         {
-            name: "Gold Sponsor 1",
+            name: "BWXT",
             logo: bwxt,
-            url: "https://sponsor6.com",
+            url: "https://www.bwxt.com/",
             scale: 1.0
         },
         {
-            name: "Gold Sponsor 1",
+            name: "Orange Vise",
             logo: orangeVise,
-            url: "https://sponsor6.com",
+            url: "https://www.orangevise.com/",
             scale: 1.0
         },
         {
-            name: "Gold Sponsor 1",
+            name: "GMN Bearing",
             logo: gmnBearing,
-            url: "https://sponsor6.com",
+            url: "https://www.gmnbt.com/",
             scale: 1.0
         },
         {
-            name: "Gold Sponsor 1",
+            name: "KISSsoft",
             logo: kissoft,
-            url: "https://sponsor6.com",
+            url: "https://www.kisssoft.com/en",
             scale: 1.0
         },
         {
-            name: "Gold Sponsor 1",
+            name: "SKF",
             logo: skf,
-            url: "https://sponsor6.com",
+            url: "https://www.skf.com/us",
             scale: 1.0
         },
         {
-            name: "Gold Sponsor 1",
+            name: "Magna",
             logo: magna,
-            url: "https://sponsor6.com",
+            url: "https://www.magna.com/",
             scale: 1.0
         },
         {
-            name: "Gold Sponsor 1",
+            name: "ANSYS",
             logo: ansys,
-            url: "https://sponsor6.com",
+            url: "https://www.ansys.com/",
             scale: 1.0
         },
         {
-            name: "Gold Sponsor 1",
+            name: "Skamar",
             logo: skamar,
-            url: "https://sponsor6.com",
+            url: "https://skamar.com/",
             scale: 1.0
         },
         {
-            name: "Gold Sponsor 1",
+            name: "Gene Haas Foundation",
             logo: haas,
-            url: "https://sponsor6.com",
+            url: "https://www.ghaasfoundation.org/",
             scale: 1.0
         },
     ],
     silver: [
         {
-            name: "Silver Sponsor 1",
+            name: "Tylok",
             logo: tylok,
-            url: "https://sponsor10.com",
+            url: "https://www.tylok.com/",
             scale: 1.0
         },
         {
-            name: "Silver Sponsor 1",
+            name: "GMP Friction",
             logo: gmp,
-            url: "https://sponsor10.com",
+            url: "https://gmpfriction.com/",
             scale: 1.0
         },
         {
-            name: "Silver Sponsor 1",
+            name: "SGS",
             logo: sgs,
-            url: "https://sponsor10.com",
+            url: "https://www.sgs.com/en",
             scale: 1.0
         },
         {
-            name: "Silver Sponsor 1",
+            name: "Kenesto",
             logo: kenesto,
-            url: "https://sponsor10.com",
+            url: "https://www.kenesto.com/",
             scale: 1.0
         },
         {
-            name: "Silver Sponsor 1",
+            name: "Sears think[box]",
             logo: thinkbox,
-            url: "https://sponsor10.com",
+            url: "https://case.edu/thinkbox/",
             scale: 1.0
         },
         {
-            name: "Silver Sponsor 1",
+            name: "Michigan Scientific",
             logo: michiganScientific,
-            url: "https://sponsor10.com",
+            url: "https://www.michsci.com/",
             scale: 1.0
         },
         {
-            name: "Silver Sponsor 1",
+            name: "Mastercam",
             logo: mastercam,
-            url: "https://sponsor10.com",
+            url: "https://www.mastercam.com/",
             scale: 1.0
         },
         {
-            name: "Silver Sponsor 1",
+            name: "Blaser Swisslube",
             logo: blaser,
-            url: "https://sponsor10.com",
+            url: "https://blaser.com/",
             scale: 1.0
         },
         {
-            name: "Silver Sponsor 1",
+            name: "AutomationDirect",
             logo: automationDirect,
-            url: "https://sponsor10.com",
+            url: "https://www.automationdirect.com/adc/home/home",
             scale: 1.0
         },
         {
-            name: "Silver Sponsor 1",
+            name: "American Friction",
             logo: americanFriction,
-            url: "https://sponsor10.com",
+            url: "https://www.americanfriction.net/",
             scale: 1.0
         },
         {
-            name: "Silver Sponsor 1",
+            name: "Clark",
             logo: clark,
-            url: "https://sponsor10.com",
+            url: "#",
             scale: 1.0
         },
         {
-            name: "Silver Sponsor 1",
+            name: "Anodizing Specialists",
             logo: asi,
-            url: "https://sponsor10.com",
+            url: "https://www.anodizingspecialists.com/",
             scale: 1.0
         },
         {
-            name: "Silver Sponsor 1",
+            name: "Schunk",
             logo: schunk,
-            url: "https://sponsor10.com",
+            url: "https://schunk.com/us/en",
             scale: 1.0
         },
     ],
     bronze: [
         {
-            name: "Bronze Sponsor 1",
+            name: "Nord-Lock Group",
             logo: nordlock,
-            url: "https://sponsor15.com",
+            url: "https://www.nord-lock.com/en-us/",
             scale: 1.0
         },
         {
-            name: "Silver Sponsor 1",
+            name: "Southington Offroad",
             logo: southington,
-            url: "https://sponsor10.com",
+            url: "https://southingtonoffroad.com/",
             scale: 1.0
         },
         {
-            name: "Silver Sponsor 1",
+            name: "Performance Titanium Group",
             logo: ptg,
-            url: "https://sponsor10.com",
+            url: "https://performancetitanium.com/",
             scale: 1.0
         },
         {
-            name: "Silver Sponsor 1",
+            name: "Bolt Depot",
             logo: boltDepot,
-            url: "https://sponsor10.com",
+            url: "https://boltdepot.com/",
             scale: 1.0
         },
         {
-            name: "Silver Sponsor 1",
+            name: "FK Rod Ends",
             logo: fkRodEnds,
-            url: "https://sponsor10.com",
+            url: "https://www.fkrodends.com/",
             scale: 1.0
         },
         {
-            name: "Silver Sponsor 1",
+            name: "Altair",
             logo: altair,
-            url: "https://sponsor10.com",
+            url: "https://altair.com/",
             scale: 1.0
         },
         {
-            name: "Silver Sponsor 1",
+            name: "Alro",
             logo: alro,
-            url: "https://sponsor10.com",
+            url: "https://www.alro.com/",
             scale: 1.0
         },
     ],
