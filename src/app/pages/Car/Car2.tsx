@@ -1,15 +1,22 @@
+import { useState, useRef } from 'react';
 import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple';
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial';
 import { HeroSection } from '../../../components/HeroSection/HeroSection';
 import { FadeIn } from '../../../components/FadeIn/FadeIn';
 import { Container, Title, Text } from '@mantine/core';
+import { Carousel, Embla } from '@mantine/carousel';
 import styles from './Car2.module.css';
 
 import heroImage from '../../../assets/images/LMF02810.jpg';
+import placeholderImage2 from '../../../assets/images/LMF00777.jpg';
 
 const placeholderImage = heroImage;
 
 export default function Car() {
+  const [selectedImages, setSelectedImages] = useState<Record<string, number>>({});
+
+  const carouselRefs = useRef<Record<string, Embla | null>>({});
+
   const carData = {
     name: "SR25",
     year: 2025,
@@ -17,13 +24,12 @@ export default function Car() {
       {
         key: "overview",
         title: "OVERVIEW",
-        image: placeholderImage,
         description: "The SR24 represents the pinnacle of CWRU Motorsports engineering, designed and built over nine months for the 2024 Baja SAE Collegiate Design Series. This vehicle features significant upgrades from previous models, including a transition to the 14hp Kohler Command Pro CH440 engine—a departure from the Briggs and Stratton engines used in all previous SR models.",
       },
       {
         key: "frame",
         title: "FRAME",
-        image: placeholderImage,
+        images: [placeholderImage, placeholderImage2, placeholderImage, placeholderImage, placeholderImage2, placeholderImage],
         description: "Our custom frame provides the foundation for our competition vehicle, designed for optimal strength-to-weight ratio and driver safety.",
         specs: [
           { name: 'Material', value: '4130N CrMo tubular structure' },
@@ -37,7 +43,7 @@ export default function Car() {
       {
         key: "front-suspension",
         title: "FRONT SUSPENSION",
-        image: placeholderImage,
+        images: [placeholderImage, placeholderImage2, placeholderImage, placeholderImage2, placeholderImage, placeholderImage2],
         description: "Our front suspension system delivers exceptional handling and terrain absorption capabilities.",
         specs: [
           { name: 'Suspension System', value: 'Double wishbones with custom upright and hub CNC-machined in-house' },
@@ -51,7 +57,7 @@ export default function Car() {
       {
         key: "rear-suspension",
         title: "REAR SUSPENSION",
-        image: placeholderImage,
+        images: [placeholderImage, placeholderImage, placeholderImage],
         description: "Our rear suspension system provides optimal traction and stability across challenging terrain.",
         specs: [
           { name: 'Suspension System', value: 'Semi-trailing arm with 3D-printed titanium load-bearing rear half-shaft produced by BMT Aerospace' },
@@ -65,7 +71,7 @@ export default function Car() {
       {
         key: "braking",
         title: "BRAKING SYSTEM",
-        image: placeholderImage,
+        images: [placeholderImage, placeholderImage, placeholderImage],
         description: "Our custom braking system delivers reliable stopping power and precise control.",
         specs: [
           { name: 'Braking System', value: 'Tilton dual master cylinder hydraulic system with Wilwood proportioning valve' },
@@ -79,7 +85,7 @@ export default function Car() {
       {
         key: "drivetrain",
         title: "DRIVETRAIN",
-        image: placeholderImage,
+        images: [placeholderImage, placeholderImage, placeholderImage],
         description: "Our powertrain system delivers optimal power transfer and efficiency for competition demands.",
         specs: [
           { name: 'Engine', value: '14hp Kohler Command Pro CH440 single-cylinder 4-stroke' },
@@ -93,7 +99,7 @@ export default function Car() {
       {
         key: "electronics",
         title: "ELECTRONICS",
-        image: placeholderImage,
+        images: [placeholderImage, placeholderImage, placeholderImage],
         description: "Our electrical systems provide reliable power distribution and data collection for vehicle optimization.",
         specs: [
           { name: 'Battery', value: 'Lithium iron phosphate (LiFePO4) 12V battery' },
@@ -105,6 +111,49 @@ export default function Car() {
         ]
       }
     ]
+  };
+
+  const centerSlide = (sectionKey: string, slideIndex: number) => {
+    const embla = carouselRefs.current[sectionKey];
+    if (embla) {
+      embla.scrollTo(slideIndex);
+    }
+  };
+
+  // Function to handle image selection
+  const handleImageSelect = (sectionKey: string, imageIndex: number) => {
+    setSelectedImages(prev => ({
+      ...prev,
+      [sectionKey]: imageIndex
+    }));
+
+    centerSlide(sectionKey, imageIndex);
+  };
+
+  // Custom navigation handlers
+  const handlePrevClick = (sectionKey: string) => {
+    const embla = carouselRefs.current[sectionKey];
+    const currentIndex = selectedImages[sectionKey] || 0;
+    const sectionImages = carData.sections.find(section => section.key === sectionKey)?.images;
+    
+    if (embla && sectionImages) {
+      const newIndex = (currentIndex - 1 + sectionImages.length) % sectionImages.length;
+      handleImageSelect(sectionKey, newIndex);
+    }
+  };
+
+  const handleNextClick = (sectionKey: string) => {
+    const embla = carouselRefs.current[sectionKey];
+    const currentIndex = selectedImages[sectionKey] || 0;
+    const sectionImages = carData.sections.find(section => section.key === sectionKey)?.images;
+    
+    if (embla && sectionImages) {
+      // Calculate new index with looping
+      const newIndex = (currentIndex + 1) % sectionImages.length;
+      
+      // Update selected image and center it
+      handleImageSelect(sectionKey, newIndex);
+    }
   };
 
   return (
@@ -154,12 +203,68 @@ export default function Car() {
                       )}
                     </div>
 
-                    <div className={styles.sectionImageContainer}>
-                      <img
-                          src={section.image}
-                          alt={section.title}
-                          className={styles.sectionImage}
-                      />
+                    <div className={styles.sectionImageWrapper}>
+                      <div className={styles.sectionImageContainer}>
+                        {/* Main image display */}
+                        <div className={styles.mainImageContainer}>
+                          {section.images && section.images.length > 0 && (
+                            <img
+                              src={section.images[selectedImages[section.key] || 0]}
+                              alt={`${section.title} main image`}
+                              className={styles.mainImage}
+                            />
+                          )}
+                        </div>
+
+                        {section.images && section.images.length > 1 && (
+                          <Carousel
+                            getEmblaApi={(embla) => {
+                              carouselRefs.current[section.key] = embla;
+                              // Initially center the first slide (or the selected one)
+                              if (embla) {
+                                const selectedIndex = selectedImages[section.key] || 0;
+                                embla.scrollTo(selectedIndex);
+                              }
+                            }}
+                            withIndicators={false}
+                            withControls={true}
+                            slideSize="25%"
+                            slideGap="md"
+                            loop
+                            align="center"
+                            className={styles.thumbnailCarousel}
+                            controlsOffset="xs"
+                            controlSize={24}
+                            nextControlProps={{
+                              onClick: (e) => {
+                                e.stopPropagation();
+                                handleNextClick(section.key);
+                              }
+                            }}
+                            previousControlProps={{
+                              onClick: (e) => {
+                                e.stopPropagation();
+                                handlePrevClick(section.key);
+                              }
+                            }}
+                          >
+                            {section.images.map((image, index) => (
+                              <Carousel.Slide key={index}>
+                                <div 
+                                  className={`${styles.thumbnailContainer} ${selectedImages[section.key] === index ? styles.activeThumbnail : ''}`}
+                                  onClick={() => handleImageSelect(section.key, index)}
+                                >
+                                  <img
+                                    src={image}
+                                    alt={`${section.title} thumbnail ${index + 1}`}
+                                    className={styles.thumbnailImage}
+                                  />
+                                </div>
+                              </Carousel.Slide>
+                            ))}
+                          </Carousel>
+                        )}
+                      </div>
                     </div>
                   </div>
                 </div>
