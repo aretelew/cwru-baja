@@ -1,48 +1,52 @@
 import styles from './LogoCarousel.module.css';
 
-interface LogoCarouselProps {
-  logos: string[];
-  links?: string[];
+interface SponsorData {
+  logo: string;
+  link?: string;
 }
 
-export const LogoCarousel = ({ logos, links = [] }: LogoCarouselProps) => {
+interface LogoCarouselProps {
+  sponsors: SponsorData[];
+}
+
+export const LogoCarousel = ({ sponsors }: LogoCarouselProps) => {
   return (
     <div className={styles.logoCarousel}>
       <div className={styles.logoTrack}>
         {/* First set */}
-        {logos.map((logo, index) => (
+        {sponsors.map((sponsor, index) => (
           <div className={styles.logoItem} key={`logo-1-${index}`}>
-            {links[index] ? (
+            {sponsor.link ? (
               <a
-                href={links[index]}
+                href={sponsor.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.logoLink}
               >
-                <img src={logo} alt={`Sponsor logo ${index + 1}`} />
+                <img src={sponsor.logo} alt={`Sponsor logo ${index + 1}`} />
               </a>
             ) : (
               <div className={styles.logoLink}>
-                <img src={logo} alt={`Sponsor logo ${index + 1}`} />
+                <img src={sponsor.logo} alt={`Sponsor logo ${index + 1}`} />
               </div>
             )}
           </div>
         ))}
         {/* Second set */}
-        {logos.map((logo, index) => (
+        {sponsors.map((sponsor, index) => (
           <div className={styles.logoItem} key={`logo-2-${index}`}>
-            {links[index] ? (
+            {sponsor.link ? (
               <a
-                href={links[index]}
+                href={sponsor.link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.logoLink}
               >
-                <img src={logo} alt={`Sponsor logo ${index + 1} (copy)`} />
+                <img src={sponsor.logo} alt={`Sponsor logo ${index + 1} (copy)`} />
               </a>
             ) : (
               <div className={styles.logoLink}>
-                <img src={logo} alt={`Sponsor logo ${index + 1} (copy)`} />
+                <img src={sponsor.logo} alt={`Sponsor logo ${index + 1} (copy)`} />
               </div>
             )}
           </div>

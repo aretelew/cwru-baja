@@ -244,7 +244,7 @@ const sponsors = {
         {
             name: "Clark",
             logo: clark,
-            url: "#",
+            url: "http://www.clark-metal.com/",
             scale: 1.0
         },
         {
