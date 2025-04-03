@@ -2,15 +2,9 @@ import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple.tsx'
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial.tsx';
 import { Card, Text, Button } from '@mantine/core';
 import { FadeIn } from '../../../components/FadeIn/FadeIn';
-import {
-  IconBrandInstagram,
-  IconBrandYoutube,
-  IconBrandFacebook,
-  IconBrandLinkedin
-} from '@tabler/icons-react';
+import { IconBrandInstagram, IconBrandYoutube, IconBrandFacebook, IconBrandLinkedin } from '@tabler/icons-react';
 import styles from './Social.module.css';
 import { HeroSection } from "../../../components/HeroSection/HeroSection.tsx";
-// import myImage from "../../../assets/images/butler_bash_car_lineup.jpg";
 import heroImage from "../../../assets/images/LMF03065.jpg";
 
 
@@ -70,8 +64,8 @@ export default function Social() {
                       <Card.Section className={styles.iconSection}>
                         <platform.icon size={48} color={platform.color} />
                       </Card.Section>
-                      <Text fw={500} size="lg" mt="md">{platform.name}</Text>
-                      <Text size="sm" c="dimmed" mt="sm">
+                      <Text fw={500} size="lg" mt="md" c="white">{platform.name}</Text>
+                      <Text size="sm" c="rgba(255, 255, 255, 0.7)" mt="sm">
                         {platform.description}
                       </Text>
                       <Button

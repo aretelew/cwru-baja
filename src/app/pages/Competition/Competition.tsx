@@ -102,15 +102,15 @@ const seasons: Season[] = [
                 ]
             },
             {
-                name: "BAJA SAE Michigan",
+                name: "BAJA SAE MICHIGAN",
                 awards: [
-                    "6th Place Overall Performance",
-                    "7th Place Design",
-                    "1st Place Acceleration",
-                    "3rd Place Hill Climb",
-                    "11th Place Maneuverability",
-                    "6th Place Suspension",
-                    "6th Place Endurance"
+                    "6th PLACE OVERALL PERFORMACE",
+                    "7th PLACE DESIGN",
+                    "1st PLACE ACCELERATION",
+                    "3rd PLACE HILL CLIMB",
+                    "11th PLACE MANEUVERABILITY",
+                    "6th PLACE SUSPENSION",
+                    "6th PLACE ENDURANCE"
                 ]
             }
         ]
@@ -130,25 +130,26 @@ const seasons: Season[] = [
                 ]
             },
             {
-                name: "BAJA SAE OSHKOSH",
+                name: "BAJA SAE OREGON",
                 awards: [
-                    "5TH PLACE OVERALL PERFORMANCE",
-                    "5TH PLACE SALES",
-                    "5TH PLACE DESIGN",
-                    "2ND PLACE ACCELERATION",
+                    "6TH PLACE OVERALL PERFORMANCE",
+                    "9TH PLACE SALES",
+                    "3RD PLACE DESIGN",
+                    "5TH PLACE ACCELERATION",
                     "4TH PLACE MANEUVERABILITY",
-                    "9TH PLACE ENDURANCE"
+                    "2ND PLACE ENDURANCE"
                 ]
             },
             {
-                name: "BAJA SAE OSHKOSH",
+                name: "BAJA SAE OHIO",
                 awards: [
-                    "5TH PLACE OVERALL PERFORMANCE",
-                    "5TH PLACE SALES",
-                    "5TH PLACE DESIGN",
-                    "2ND PLACE ACCELERATION",
-                    "4TH PLACE MANEUVERABILITY",
-                    "9TH PLACE ENDURANCE"
+                    "1ST PLACE OVERALL PERFORMANCE",
+                    "2ND PLACE SALES",
+                    "8TH PLACE DESIGN",
+                    "3RD PLACE ACCELERATION",
+                    "2ND PLACE MANEUVERABILITY",
+                    "1ST PLACE SUSPENSION",
+                    "2ND PLACE ENDURANCE"
                 ]
             }
         ]
@@ -169,21 +170,17 @@ const seasons: Season[] = [
                 ]
             },
             {
-                name: "BAJA SAE ARIZONA",
+                name: "BAJA SAE ROCHESTER",
                 awards: [
-                    "5TH PLACE OVERALL PERFORMANCE",
+                    "6TH PLACE ACCELERATION",
                 ]
             },
             {
-                name: "BAJA SAE ARIZONA",
+                name: "BAJA SAE TENNESSEE TECH",
                 awards: [
-                    "5TH PLACE OVERALL PERFORMANCE",
-                    "2ND PLACE SALES",
-                    "3RD PLACE ACCELERATION",
-                    "3RD PLACE MANEUVERABILITY",
-                    "6TH PLACE SLED PULL",
-                    "8TH PLACE ENDURANCE",
-                    "3RD PLACE OVERALL DYNAMIC"
+                    "5TH PLACE AWARD",
+                    "4TH PLACE DESIGN",
+                    "4TH PLACE ACCELERATION",
                 ]
             }
         ]
@@ -208,18 +205,23 @@ const seasons: Season[] = [
         ]
     },
     {
-        year: "2020-2019",
+        year: "2020",
         competitions: [
             {
-                name: "BAJA SAE LOUISVILLE (2020)",
+                name: "BAJA SAE LOUISVILLE",
                 awards: [
                     "3RD PLACE SALES"
                 ]
-            },
+            }
+        ]
+    },
+    {
+        year: "2019",
+        competitions: [
             {
-                name: "BAJA SAE ROCHESTER (2019)",
+                name: "BAJA SAE ROCHESTER",
                 awards: [
-                    "RAYMOND 1ST PLACE ACCELERATION"
+                    "1ST PLACE ACCELERATION",
                 ]
             }
         ]
@@ -242,22 +244,27 @@ const seasons: Season[] = [
         ]
     },
     {
-        year: "2017-2016",
+        year: "2017",
         competitions: [
             {
-                name: "BAJA SAE CALIFORNIA (2017)",
+                name: "BAJA SAE CALIFORNIA",
                 awards: [
                     "9TH PLACE OVERALL PERFORMANCE"
                 ]
             },
             {
-                name: "BAJA SAE KANSAS (2017)",
+                name: "BAJA SAE KANSAS",
                 awards: [
                     "8TH PLACE OVERALL PERFORMANCE"
                 ]
             },
+        ]
+    },
+    {
+        year: "2016",
+        competitions: [
             {
-                name: "BAJA SAE ROCHESTER (2016)",
+                name: "BAJA SAE ROCHESTER",
                 awards: [
                     "3RD PLACE ACCELERATION"
                 ]

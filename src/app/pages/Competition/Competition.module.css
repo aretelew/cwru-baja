@@ -27,19 +27,18 @@
     margin-bottom: 0.5em;
     color: var(--mantine-color-white);
     text-transform: uppercase;
+    text-align: center;
 }
 
 .introTitle::after {
     content: '';
     display: block;
-    width: 200px;
+    width: 100px;
     height: 3px;
     background: var(--mantine-color-red-6);
     border-radius: 2px;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin: 1rem auto 2rem;
 }
-
 
 .introSection:hover {
     border-color: rgba(255, 255, 255, 0.2);

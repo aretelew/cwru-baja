@@ -1,5 +1,5 @@
 import styles from './Support.module.css';
-import { Container, Image } from '@mantine/core';
+import { Image } from '@mantine/core';
 
 import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple.tsx';
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial.tsx';
@@ -55,9 +55,6 @@ import boltDepot from '../../../assets/logo/sponsor/svg/bolt-depot.svg';
 import fkRodEnds from '../../../assets/logo/sponsor/svg/fk-rod-ends.svg';
 import altair from '../../../assets/logo/sponsor/svg/altair.svg';
 import alro from '../../../assets/logo/sponsor/svg/alro.svg';
-
-
-
 
 const sponsors = {
     ultimate: [
@@ -353,7 +350,7 @@ export default function Support() {
     return (
         <>
             <HeaderSimple />
-                <Container className={styles.mainContainer}>
+                <div className={styles.mainContainer}>
                     <HeroSection
                         backgroundImage={heroImage}
                         title={`SPONSORS`}
@@ -384,7 +381,7 @@ export default function Support() {
                         sponsors={sponsors.bronze}
                         tierClass="bronze"
                     />
-                </Container>
+                </div>
             <FooterSocial />
         </>
     );

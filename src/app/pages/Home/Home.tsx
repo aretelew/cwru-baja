@@ -104,8 +104,7 @@ export default function Home() {
                         <div className={styles.textContainer}>
                             <h1 className={styles.aboutTitle}>About Us</h1>
                             <Text size="xs" className={styles.p}>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                                lacinia, justo eu tincidunt facilisis, velit nisi pulvinar eros...
+                                CWRU Baja SAE is a student-run engineering team dedicated to designing, building, testing, and racing an off-road vehicle for the international Baja SAE competition. Our diverse team brings together students from various engineering disciplines to tackle real-world challenges in vehicle design and performance. Through hands-on experience, we develop practical skills in engineering, project management, and teamwork that complement our academic studies. Join us as we push the boundaries of what's possible in off-road vehicle design!
                             </Text>
                             <Box mt={40}>
                                 <Group justify="center">
@@ -155,3 +154,4 @@ export default function Home() {
         </>
     );
 }
+

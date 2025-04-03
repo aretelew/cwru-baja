@@ -3,12 +3,19 @@ import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple';
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial';
 import { HeroSection } from '../../../components/HeroSection/HeroSection';
 import { FadeIn } from '../../../components/FadeIn/FadeIn';
-import { Container, Title, Text } from '@mantine/core';
+import { Title, Text } from '@mantine/core';
 import { Carousel, Embla } from '@mantine/carousel';
 import styles from './Car2.module.css';
 
 import heroImage from '../../../assets/images/LMF02810.jpg';
 import placeholderImage2 from '../../../assets/images/LMF00777.jpg';
+
+import suspensionImage1 from '../../../assets/images/LMF09154.jpg';
+import suspensionImage2 from '../../../assets/images/LMF02296.jpg';
+
+
+import brakesImage2 from '../../../assets/images/LMF03118.jpg';
+
 
 const placeholderImage = heroImage;
 
@@ -32,54 +39,37 @@ export default function Car() {
         images: [placeholderImage, placeholderImage2, placeholderImage, placeholderImage, placeholderImage2, placeholderImage],
         description: "Our custom frame provides the foundation for our competition vehicle, designed for optimal strength-to-weight ratio and driver safety.",
         specs: [
-          { name: 'Material', value: '4130N CrMo tubular structure' },
+          { name: 'Material', value: '4130 Steel' },
           { name: 'Joining Method', value: 'GTAW with ER70S-2 filler material at manually-notched joints' },
-          { name: 'Body Panels', value: 'Molded carbon-fiber wet layup body panels with aluminum firewall and UHMW skid plate' },
-          { name: 'Engine', value: '600cc 4-stroke engine' },
-          { name: 'Weight', value: '400 lbs (182 kg)' },
-          { name: 'Transmission', value: 'CVT with reverse' },
+          { name: 'Body Panels', value: 'Molded Kydex body panels with aluminum firewall and UHMW skid plate' },
+          { name: 'Tubing', value: 'Tubes bent and notched in-house'}
         ]
       },
       {
-        key: "front-suspension",
-        title: "FRONT SUSPENSION",
-        images: [placeholderImage, placeholderImage2, placeholderImage, placeholderImage2, placeholderImage, placeholderImage2],
-        description: "Our front suspension system delivers exceptional handling and terrain absorption capabilities.",
-        specs: [
-          { name: 'Suspension System', value: 'Double wishbones with custom upright and hub CNC-machined in-house' },
-          { name: 'Springs and Dampers', value: 'FOX Float 3 EVOL with added piggyback chamber and semi-active valve' },
-          { name: 'Travel', value: '254 mm (10 in)' },
-          { name: 'Wheel Size', value: '10-inch aluminum wheels with 22x7-10 Maxxis tires' },
-          { name: 'Anti-Dive', value: '10% anti-dive geometry' },
-          { name: 'Steering', value: 'Custom rack and pinion with 2:1 ratio' }
-        ]
-      },
-      {
-        key: "rear-suspension",
-        title: "REAR SUSPENSION",
-        images: [placeholderImage, placeholderImage, placeholderImage],
+        key: "suspension",
+        title: "SUSPENSION",
+        images: [suspensionImage1, suspensionImage2, placeholderImage],
         description: "Our rear suspension system provides optimal traction and stability across challenging terrain.",
         specs: [
-          { name: 'Suspension System', value: 'Semi-trailing arm with 3D-printed titanium load-bearing rear half-shaft produced by BMT Aerospace' },
-          { name: 'Springs and Dampers', value: 'FOX Float 3 EVOL with added piggyback chamber and semi-active valve' },
-          { name: 'Travel', value: '254 mm (10 in)' },
-          { name: 'Wheel Size', value: '10-inch aluminum wheels with 22x10-10 Maxxis tires' },
-          { name: 'Axle', value: 'Custom 4340 steel axle with needle bearings' },
-          { name: 'Anti-Squat', value: '30% anti-squat geometry' }
+          { name: 'Front Suspension System', value: 'Double wishbones with custom upright and hub CNC-machined in-house' },
+          { name: 'Rear Suspension System', value: 'Semi-trailing arm with electron beam welded titanium load-bearing rear half-shaft' },
+          { name: 'Steering System', value: 'Completely custom rack and pinion steering system machined by BMT Aerospace' },
+          { name: 'Springs and Dampers', value: 'FOX Float 3 with added air chamber, piggyback chamber and semi-active valve' },
+          { name: 'Wheel Size', value: '23-inch wheels' },
         ]
       },
       {
         key: "braking",
         title: "BRAKING SYSTEM",
-        images: [placeholderImage, placeholderImage, placeholderImage],
+        images: [placeholderImage, brakesImage2, placeholderImage],
         description: "Our custom braking system delivers reliable stopping power and precise control.",
         specs: [
-          { name: 'Braking System', value: 'Tilton dual master cylinder hydraulic system with Wilwood proportioning valve' },
-          { name: 'Calipers', value: 'Single piston custom CNC aluminum calipers. Outboard front and inboard rear calipers' },
-          { name: 'Rotors', value: 'Laser-cut 1/8" 420 stainless steel, 152mm diameter' },
+          { name: 'Braking System', value: 'Custom dual master cylinders. Designed and CNC\'d in house' },
+          { name: 'Calipers', value: 'Dual piston floating caliper in the front and Fixed quad piston rear brake caliper. Outboard front and inboard rear calipers' },
+          { name: 'Rotors', value: 'Water-jet 1/8" topology optimzied rotors' },
           { name: 'Pedal Ratio', value: '5:1 pedal ratio for optimal braking force' },
           { name: 'Lines', value: 'Steel-braided Teflon hydraulic lines' },
-          { name: 'Fluid', value: 'DOT 5.1 brake fluid' }
+          { name: 'Fluid', value: 'DOT 4.0 brake fluid' }
         ]
       },
       {
@@ -88,12 +78,10 @@ export default function Car() {
         images: [placeholderImage, placeholderImage, placeholderImage],
         description: "Our powertrain system delivers optimal power transfer and efficiency for competition demands.",
         specs: [
-          { name: 'Engine', value: '14hp Kohler Command Pro CH440 single-cylinder 4-stroke' },
-          { name: 'Transmission', value: 'Gaged Engineering GX9 Continuously Variable Transmission (CVT)' },
-          { name: 'Drive Ratio', value: '12:1 final drive ratio' },
-          { name: 'Output Shaft', value: '4340 steel shaft with needle bearings' },
-          { name: 'Differential', value: 'Custom torque-biasing limited slip differential' },
-          { name: 'Cooling', value: 'Direct air cooled with optimized shroud design' }
+          { name: 'Engine', value: 'Kohler CH440 with Baja SAE mandated restriction plate' },
+          { name: 'Transmission', value: 'Custom primary and secondary outputting power to final drive gearbox' },
+          { name: 'Gear Box', value: 'Custom CNC aluminum, ground steel gears case hardened' },
+          { name: 'Axle Joints', value: 'Custom CNC aluminum' },
         ]
       },
       {
@@ -102,12 +90,11 @@ export default function Car() {
         images: [placeholderImage, placeholderImage, placeholderImage],
         description: "Our electrical systems provide reliable power distribution and data collection for vehicle optimization.",
         specs: [
-          { name: 'Battery', value: 'Lithium iron phosphate (LiFePO4) 12V battery' },
-          { name: 'Wiring', value: 'Automotive-grade waterproof wiring harness with deutsch connectors' },
-          { name: 'Data Acquisition', value: 'Custom PCB with integrated sensors monitoring 15+ vehicle parameters' },
-          { name: 'Kill Switches', value: 'Redundant kill switches accessible from inside and outside vehicle' },
-          { name: 'Sensors', value: 'Wheel speed, shock travel, steering position, brake pressure sensors' },
-          { name: 'Telemetry', value: 'Real-time data transmission to pit crew with 100m range' }
+          { name: 'Battery', value: '4S Lithium Iron Phosphate (LiFePO4) battery' },
+          { name: 'Wiring', value: 'Aerospace grade Tefzel wiring harness' },
+          { name: 'Hardware', value: '10+ custom PCBAs for data acquisition and active vehicle control' },
+          { name: 'Architecture', value: 'Custom Cyphal/CAN distributed high reliability vehicle network'},
+          { name: 'Software', value: '10k+ lines of C++ code for data acquisition and active vehicle control' }
         ]
       }
     ]
@@ -135,7 +122,7 @@ export default function Car() {
     const embla = carouselRefs.current[sectionKey];
     const currentIndex = selectedImages[sectionKey] || 0;
     const sectionImages = carData.sections.find(section => section.key === sectionKey)?.images;
-    
+
     if (embla && sectionImages) {
       const newIndex = (currentIndex - 1 + sectionImages.length) % sectionImages.length;
       handleImageSelect(sectionKey, newIndex);
@@ -146,11 +133,11 @@ export default function Car() {
     const embla = carouselRefs.current[sectionKey];
     const currentIndex = selectedImages[sectionKey] || 0;
     const sectionImages = carData.sections.find(section => section.key === sectionKey)?.images;
-    
+
     if (embla && sectionImages) {
       // Calculate new index with looping
       const newIndex = (currentIndex + 1) % sectionImages.length;
-      
+
       // Update selected image and center it
       handleImageSelect(sectionKey, newIndex);
     }
@@ -167,7 +154,7 @@ export default function Car() {
           verticalPosition="60%"
         />
 
-        <Container size="xl" className={styles.carContainer}>
+        <div className={styles.carContainer}>
           <FadeIn direction="up">
             <div className={styles.carIntro}>
               <Title order={1} className={styles.sectionMainTitle}>THE {carData.name} BAJA VEHICLE</Title>
@@ -250,7 +237,7 @@ export default function Car() {
                           >
                             {section.images.map((image, index) => (
                               <Carousel.Slide key={index}>
-                                <div 
+                                <div
                                   className={`${styles.thumbnailContainer} ${selectedImages[section.key] === index ? styles.activeThumbnail : ''}`}
                                   onClick={() => handleImageSelect(section.key, index)}
                                 >
@@ -271,7 +258,7 @@ export default function Car() {
               </FadeIn>
             ))}
           </div>
-        </Container>
+        </div>
         <FooterSocial />
       </div>
     </>

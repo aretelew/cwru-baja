@@ -15,6 +15,7 @@
   transition: transform 0.2s ease, outline 0.2s ease;
   background: rgba(255, 255, 255, 0.05);
   outline: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
 }
 
 .socialCard:hover {

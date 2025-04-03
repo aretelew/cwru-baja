@@ -153,7 +153,7 @@ const operationsBoard: MemberType[] = [
 const specialtyLeads: MemberType[] = [
     {
         name: "Lucy Ma",
-        role: "MAYBE COST REPORT",
+        role: "Cost Report",
         img: LMF04627,
         graduationYear: "2027",
         linkedin: "https://www.linkedin.com/in/lucyma-/"

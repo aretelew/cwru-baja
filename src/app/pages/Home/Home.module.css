@@ -38,10 +38,12 @@
 
 .aboutTitle {
     color: white;
+    text-align: center;
 }
 
 .textContainer {
     flex: 2;
+    text-align: left;
 }
 
 .textContainer h1 {
