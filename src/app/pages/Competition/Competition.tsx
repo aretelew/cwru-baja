@@ -287,12 +287,9 @@ export default function Competition() {
                     <div className={styles.introSection}>
                         <h1 className={styles.introTitle}>THE BAJA SAE COLLEGIATE DESIGN SERIES</h1>
                         <Text className={styles.introParagraph}>
-                            Sanctioned by the Society of Automotive Engineers (SAE), the Baja SAE collegiate design series was founded in 1976 with the purpose of offering real-world engineering experience to students from universities around the world.
-                            Student teams are challenged to design and manufacture a high-performance, single-seat off-road vehicle that is aimed at the recreational user market and conforms to the comprehensive Baja SAE rulebook.
-                            Along with the challenge of engineering the vehicle, teams must also secure financial support for their project while at the same time managing their educational priorities.
-                            Teams will then have their performance evaluated through four-day long competitions, which consist of a rigorous technical inspection to evaluate conformance to rules, design and sales presentations given to industry professionals, cost evaluation, several dynamic events, and a four-hour long wheel-to-wheel endurance race.
-                            Three official Baja SAE competitions are held in the United States each year in the spring and the CWRU Motorsports team aims to compete in each one to maximize the experience each member gains.
-                            The team will be competing in all three of the 2020 competitions, which will be held in Arizona, Louisville, and Illinois.  Detailed information for this year's events can be seen on the SAE International website.
+                            Baja SAE, sanctioned by the Society of Automotive Engineers, is a collegiate design competition founded in 1976, providing students real-world engineering experience. Teams design, build, and test high-performance, single-seat off-road vehicles tailored for recreational users while adhering to SAE's rigorous standards.
+                            Teams also handle fundraising and project management alongside academics. Competitions include technical inspections, design and sales presentations, cost evaluations, dynamic driving events, and a four-hour endurance race.
+                            CWRU Motorsports aims to compete in all three 2025 Baja SAE events held in Arizona, Louisville, and Illinois. More details are available on the SAE International website.
                         </Text>
                     </div>
                 </FadeIn>

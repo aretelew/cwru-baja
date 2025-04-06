@@ -1,7 +1,7 @@
 import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple.tsx';
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial.tsx';
 import { Image, Text, Button, Group, Box } from '@mantine/core';
-import myImage from '../../../assets/images/butler_bash_car_lineup.jpg';
+import heroImage from '../../../assets/images/LMF00234.jpg';
 import styles from './Home.module.css';
 import '@mantine/carousel/styles.css';
 import { FadeIn } from '../../../components/FadeIn/FadeIn.tsx';
@@ -97,7 +97,7 @@ export default function Home() {
         <>
             <HeaderSimple />
             <div className={styles.mainContainer}>
-                <HeroSection backgroundImage={myImage} title="CWRU MOTORSPORTS" />
+                <HeroSection backgroundImage={heroImage} title="CWRU MOTORSPORTS" />
 
                 <FadeIn direction="up" delay={0.2}>
                     <div className={styles.aboutContainer}>
@@ -130,7 +130,7 @@ export default function Home() {
                             </Box>
                         </div>
                         <Image
-                            src={myImage}
+                            src={heroImage}
                             alt="Text Image"
                             className={styles.textImage}
                             radius="md"

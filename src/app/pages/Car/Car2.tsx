@@ -8,16 +8,27 @@ import { Carousel, Embla } from '@mantine/carousel';
 import styles from './Car2.module.css';
 
 import heroImage from '../../../assets/images/LMF02810.jpg';
-import placeholderImage2 from '../../../assets/images/LMF00777.jpg';
+
+import frameImage1 from '../../../assets/images/LMF02596.jpg';
+import frameImage2 from '../../../assets/images/LMF03021.jpg';
+import frameImage3 from '../../../assets/images/LMF94729.jpg';
+import frameImage4 from '../../../assets/images/LMF09114.jpg';
 
 import suspensionImage1 from '../../../assets/images/LMF09154.jpg';
-import suspensionImage2 from '../../../assets/images/LMF02296.jpg';
+import suspensionImage3 from '../../../assets/images/LMF09078.jpg';
+import suspensionImage4 from '../../../assets/images/LMF21270.jpg';
 
+import brakesImage1 from '../../../assets/images/LMF03118.jpg';
+import brakesImage2 from '../../../assets/images/LMF02296.jpg';
+import brakesImage3 from '../../../assets/images/LMF03012.jpg';
 
-import brakesImage2 from '../../../assets/images/LMF03118.jpg';
+import drivetrainImage1 from '../../../assets/images/LMF02226.jpg';
+import drivetrainImage2 from '../../../assets/images/LMF02442.jpg';
+import drivetrainImage3 from '../../../assets/images/LMF00777.jpg';
 
-
-const placeholderImage = heroImage;
+import electronicsImage1 from '../../../assets/images/LMF02842.jpg';
+import electronicsImage2 from '../../../assets/images/LMF16483.png';
+import electronicsImage3 from '../../../assets/images/LMF02442.jpg';
 
 export default function Car() {
   const [selectedImages, setSelectedImages] = useState<Record<string, number>>({});
@@ -36,7 +47,7 @@ export default function Car() {
       {
         key: "frame",
         title: "FRAME",
-        images: [placeholderImage, placeholderImage2, placeholderImage, placeholderImage, placeholderImage2, placeholderImage],
+        images: [frameImage1, frameImage2, frameImage3, frameImage4],
         description: "Our custom frame provides the foundation for our competition vehicle, designed for optimal strength-to-weight ratio and driver safety.",
         specs: [
           { name: 'Material', value: '4130 Steel' },
@@ -48,7 +59,7 @@ export default function Car() {
       {
         key: "suspension",
         title: "SUSPENSION",
-        images: [suspensionImage1, suspensionImage2, placeholderImage],
+        images: [suspensionImage1, suspensionImage3, suspensionImage4],
         description: "Our rear suspension system provides optimal traction and stability across challenging terrain.",
         specs: [
           { name: 'Front Suspension System', value: 'Double wishbones with custom upright and hub CNC-machined in-house' },
@@ -61,7 +72,7 @@ export default function Car() {
       {
         key: "braking",
         title: "BRAKING SYSTEM",
-        images: [placeholderImage, brakesImage2, placeholderImage],
+        images: [brakesImage1, brakesImage2, brakesImage3],
         description: "Our custom braking system delivers reliable stopping power and precise control.",
         specs: [
           { name: 'Braking System', value: 'Custom dual master cylinders. Designed and CNC\'d in house' },
@@ -75,7 +86,7 @@ export default function Car() {
       {
         key: "drivetrain",
         title: "DRIVETRAIN",
-        images: [placeholderImage, placeholderImage, placeholderImage],
+        images: [drivetrainImage1, drivetrainImage2, drivetrainImage3],
         description: "Our powertrain system delivers optimal power transfer and efficiency for competition demands.",
         specs: [
           { name: 'Engine', value: 'Kohler CH440 with Baja SAE mandated restriction plate' },
@@ -87,7 +98,7 @@ export default function Car() {
       {
         key: "electronics",
         title: "ELECTRONICS",
-        images: [placeholderImage, placeholderImage, placeholderImage],
+        images: [electronicsImage1, electronicsImage2, electronicsImage3],
         description: "Our electrical systems provide reliable power distribution and data collection for vehicle optimization.",
         specs: [
           { name: 'Battery', value: '4S Lithium Iron Phosphate (LiFePO4) battery' },
@@ -107,7 +118,6 @@ export default function Car() {
     }
   };
 
-  // Function to handle image selection
   const handleImageSelect = (sectionKey: string, imageIndex: number) => {
     setSelectedImages(prev => ({
       ...prev,
@@ -117,7 +127,6 @@ export default function Car() {
     centerSlide(sectionKey, imageIndex);
   };
 
-  // Custom navigation handlers
   const handlePrevClick = (sectionKey: string) => {
     const embla = carouselRefs.current[sectionKey];
     const currentIndex = selectedImages[sectionKey] || 0;
@@ -135,10 +144,7 @@ export default function Car() {
     const sectionImages = carData.sections.find(section => section.key === sectionKey)?.images;
 
     if (embla && sectionImages) {
-      // Calculate new index with looping
       const newIndex = (currentIndex + 1) % sectionImages.length;
-
-      // Update selected image and center it
       handleImageSelect(sectionKey, newIndex);
     }
   };
@@ -207,7 +213,6 @@ export default function Car() {
                           <Carousel
                             getEmblaApi={(embla) => {
                               carouselRefs.current[section.key] = embla;
-                              // Initially center the first slide (or the selected one)
                               if (embla) {
                                 const selectedIndex = selectedImages[section.key] || 0;
                                 embla.scrollTo(selectedIndex);
