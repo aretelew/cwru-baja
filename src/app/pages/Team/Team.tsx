@@ -183,7 +183,7 @@ const specialtyLeads: MemberType[] = [
         name: "Jessica Shue",
         role: "Documentation Lead",
         img: LMF04721,
-        graduationYear: "2026",
+        graduationYear: "2027",
         linkedin: "https://www.linkedin.com/in/jessica-s-7b7935268/"
     },
     {
