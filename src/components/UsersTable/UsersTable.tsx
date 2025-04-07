@@ -71,6 +71,7 @@ const data: UserDataType[] = [
     { name: 'William MacCormack', subteams: ['Systems'], classOf: '2025', major: 'Aerospace Engineering' },
     { name: 'Zach Brown', subteams: ['Systems'], classOf: '2025', major: 'Electrical Engineering' },
     { name: 'Zhansar Zhasparov', subteams: ['Manufacturing'], classOf: '2028', major: 'Mechanical Engineering' },
+    { name: 'Ana Newton', subteams: ['Manufacturing'], classOf: '2027', major: 'Mechanical Engineering' },
 ];
 
 type SortField = 'name' | 'classOf' | null;
