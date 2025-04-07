@@ -6,6 +6,80 @@
     margin: auto;
 }
 
+.donationSection {
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 2rem;
+    padding: 2.5rem;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.2);
+    text-align: center;
+    border: 1px solid var(--mantine-color-dark-4);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.donationSection:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    border-color: var(--mantine-color-dark-3);
+}
+
+.donationTitle {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+    color: white;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.donationTitle::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--mantine-color-red-6);
+    border-radius: 2px;
+}
+
+.donationText {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.donationInstructions {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: var(--mantine-color-dark-6);
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.85);
+    display: inline-block;
+    border: 1px solid var(--mantine-color-dark-3);
+}
+
+.donationButton {
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0 2rem;
+    transition: transform 0.2s ease;
+    background-color: var(--mantine-color-red-7);
+    border: none;
+}
+
+.donationButton:hover {
+    transform: scale(1.05);
+    background-color: var(--mantine-color-red-8);
+}
+
 .tierSection {
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
@@ -16,7 +90,6 @@
 .tierSection:hover {
     border-color: rgba(255, 255, 255, 0.2);
 }
-
 
 .tierTitle {
     text-align: center;
@@ -84,3 +157,4 @@
     width: 120px;
     height: 80px;
 }
+

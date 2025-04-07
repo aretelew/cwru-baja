@@ -42,7 +42,7 @@ export default function Car() {
       {
         key: "overview",
         title: "OVERVIEW",
-        description: "The SR24 represents the pinnacle of CWRU Motorsports engineering, designed and built over nine months for the 2024 Baja SAE Collegiate Design Series. This vehicle features significant upgrades from previous models, including a transition to the 14hp Kohler Command Pro CH440 engine—a departure from the Briggs and Stratton engines used in all previous SR models.",
+        description: "The SR25 vehicle represents the pinnacle of CWRU Motorsports engineering, designed and built over nine months for the 2025 Baja SAE Collegiate Design Series. This vehicle features significant upgrades from previous models, including a new 4 wheel drive system utilizing a propshaft instead of a chain, increased tires size (21 -> 23), and much more.",
       },
       {
         key: "frame",

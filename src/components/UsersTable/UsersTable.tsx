@@ -1,5 +1,6 @@
 import { Anchor, Badge, Group, Table, Text } from '@mantine/core';
 import styles from './UsersTable.module.css';
+import { useState } from 'react';
 
 const jobColors: Record<string, string> = {
     'Systems': 'blue',
@@ -10,7 +11,8 @@ const jobColors: Record<string, string> = {
     'Drivetrain': 'cyan',
     'Frame': 'orange',
     'Suspension': 'teal',
-    'Design': 'gray'
+    'Design': 'gray',
+    'Business Presentation': 'purple'
 };
 
 interface UserDataType {
@@ -23,8 +25,7 @@ interface UserDataType {
 const data: UserDataType[] = [
     { name: 'Abra Giddings', subteams: ['Systems', 'Brakes'], classOf: '2028', major: 'Computer Engineering & Computer Science' },
     { name: 'Abraham Loren', subteams: ['CNC'], classOf: '2028', major: 'Mechanical Engineering' },
-    { name: 'AJ Williams', subteams: ['Frame', 'Suspension'], classOf: '2027', major: 'Mechanical Engineering' },
-    { name: 'Anthony Retelewski', subteams: ['Brakes'], classOf: '2028', major: 'Computer Science' },
+    { name: 'AJ Williams', subteams: ['Frame', 'Drivetrain'], classOf: '2027', major: 'Mechanical Engineering' },
     { name: 'Arka Nath', subteams: ['Brakes'], classOf: '2027', major: 'Mechanical Engineering' },
     { name: 'Aryeh Rothenberg', subteams: ['Manufacturing'], classOf: '2027', major: 'Mechanical Engineering' },
     { name: 'Avaneesh Rao', subteams: ['Brakes', 'Suspension'], classOf: '2027', major: 'Mechanical Engineering' },
@@ -50,12 +51,57 @@ const data: UserDataType[] = [
     { name: 'Kyle Rosenbaum', subteams: ['Manufacturing'], classOf: '2026', major: 'Mechanical Engineering' },
     { name: 'Zach Wolf', subteams: ['Manufacturing'], classOf: '2028', major: 'Mechanical Engineering' },
     { name: 'Zane Sandelin', subteams: ['Drivetrain'], classOf: '2028', major: 'Mechanical Engineering' },
+    { name: 'Suhani Dangre', subteams: ['Drivetrain'], classOf: '2028', major: 'Materials Science' },
+    { name: 'Maureen Manning', subteams: ['Manufacturing'], classOf: '2028', major: 'Mechanical Engineering' },
+    { name: 'Laith Wattar', subteams: ['Suspension'], classOf: '2026', major: 'Mechanical Engineering' },
+    { name: 'Logan Senning', subteams: ['Test Engineering'], classOf: '2027', major: 'Mechanical Engineering' },
+    { name: 'Lucas Powell', subteams: ['Manufacturing'], classOf: '2026', major: 'Mechanical Engineering' },
+    { name: 'Mackenzie Roman', subteams: ['Drivetrain'], classOf: '2026', major: 'Mechanical Engineering' },
+    { name: 'Matthew Alcantara', subteams: ['Drivetrain'], classOf: '2027', major: 'Mechanical Engineering' },
+    { name: 'Morgan Ernst', subteams: ['Business Presentation'], classOf: '2028', major: 'Materials Science' },
+    { name: 'Nathan Fenster', subteams: ['Frame'], classOf: '2028', major: 'Mechanical Engineering' },
+    { name: 'Neel Mani Sulkunte', subteams: ['Manufacturing'], classOf: '2027', major: 'Mechanical Engineering' },
+    { name: 'Nick Bulawa', subteams: ['Manufacturing'], classOf: '2027', major: 'Mechanical Engineering' },
+    { name: 'Niranjan Girish', subteams: ['Systems'], classOf: '2027', major: 'Computer & Electrical Engineering' },
 ];
 
-
+type SortField = 'name' | 'classOf' | null;
+type SortDirection = 'asc' | 'desc';
 
 export function UsersTable() {
-    const rows = data.map((item) => (
+    const [sortField, setSortField] = useState<SortField>('classOf');
+    const [sortDirection, setSortDirection] = useState<SortDirection>('asc');
+
+    const handleSort = (field: SortField) => {
+        if (sortField === field) {
+            // Toggle direction if same field is clicked
+            setSortDirection(sortDirection === 'asc' ? 'desc' : 'asc');
+        } else {
+            // New field, set to ascending
+            setSortField(field);
+            setSortDirection('asc');
+        }
+    };
+
+    const sortedData = [...data].sort((a, b) => {
+        if (!sortField) return 0;
+        
+        const valueA = a[sortField];
+        const valueB = b[sortField];
+        
+        if (sortDirection === 'asc') {
+            return valueA.localeCompare(valueB);
+        } else {
+            return valueB.localeCompare(valueA);
+        }
+    });
+
+    const getSortIcon = (field: SortField) => {
+        if (sortField !== field) return null;
+        return sortDirection === 'asc' ? ' ▲' : ' ▼';
+    };
+
+    const rows = sortedData.map((item) => (
         <Table.Tr key={item.name} className={styles.tableRow}>
             <Table.Td className={`${styles.tableCell} ${styles.nameColumn}`}>
                 <Group gap="sm">
@@ -89,9 +135,19 @@ export function UsersTable() {
             <Table className={styles.table} verticalSpacing="sm" highlightOnHover>
                 <Table.Thead>
                     <Table.Tr>
-                        <Table.Th className={styles.nameColumn}>Student</Table.Th>
+                        <Table.Th 
+                            className={`${styles.nameColumn} ${styles.sortableHeader}`}
+                            onClick={() => handleSort('name')}
+                        >
+                            Student{getSortIcon('name')}
+                        </Table.Th>
                         <Table.Th className={styles.subteamColumn}>Subteam</Table.Th>
-                        <Table.Th className={styles.classColumn}>Class Of</Table.Th>
+                        <Table.Th 
+                            className={`${styles.classColumn} ${styles.sortableHeader}`}
+                            onClick={() => handleSort('classOf')}
+                        >
+                            Class Of{getSortIcon('classOf')}
+                        </Table.Th>
                         <Table.Th className={styles.majorColumn}>Major</Table.Th>
                     </Table.Tr>
                 </Table.Thead>
@@ -100,3 +156,4 @@ export function UsersTable() {
         </div>
     );
 }
+

@@ -78,7 +78,7 @@ export default function Car() {
                 <FadeIn direction="up" delay={0.1}>
                     <div className={styles.introSection}>
                         <Text className={styles.introParagraph}>
-                            Introducing the 2024 CWRU Motorsports competition vehicle, the SR24, a true marvel of engineering that embodies nine months of relentless dedication by our talented team. Designed to conquer the 2024 Baja SAE Collegiate Design Series competition, the SR24 represents a groundbreaking evolution in CWRU Motorsports' vehicle design history. The design for SR23 began June 2022 after the conclusion of the 2022 Baja SAE competition. The most notable change was the engine upgrade, transitioning to the 14hp Kohler Command Pro CH440 engine. A change away from the Briggs and Stratton Engine which had been in every SR model since the start of the team.
+                            Introducing the 2025 CWRU Motorsports competition vehicle, the SR25, a true marvel of engineering that embodies nine months of relentless dedication by our talented team. Designed to conquer the 2025 Baja SAE Collegiate Design Series competition, the SR25 represents a groundbreaking evolution in CWRU Motorsports' vehicle design history. The design for SR25 began June 2022 after the conclusion of the 2024 Baja SAE competitions. The most notable change was the engine upgrade, transitioning to the 14hp Kohler Command Pro CH440 engine. A change away from the Briggs and Stratton Engine which had been in every SR model since the start of the team.
                         </Text>
                     </div>
                 </FadeIn>

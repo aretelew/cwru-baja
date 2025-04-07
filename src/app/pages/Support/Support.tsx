@@ -1,5 +1,5 @@
 import styles from './Support.module.css';
-import { Image } from '@mantine/core';
+import { Image, Button } from '@mantine/core';
 
 import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple.tsx';
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial.tsx';
@@ -310,6 +310,34 @@ interface Sponsor {
     scale: number;
 }
 
+function DonationSection() {
+    return (
+        <FadeIn>
+            <div className={styles.donationSection}>
+                <h2 className={styles.donationTitle}>Support Our Team</h2>
+                <p className={styles.donationText}>
+                    Your generous contribution helps CWRU Baja SAE continue to design, build, and compete with our off-road vehicles. 
+                    Donations directly support new equipment, materials, competition fees, and travel expenses for our team members.
+                </p>
+                <div className={styles.donationInstructions}>
+                    <strong>Important:</strong> Once reaching the giving form, check "other" in the gift designation field and enter "Baja".
+                </div>
+                <Button
+                    component="a"
+                    href="https://www.givecampus.com/71er24"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="lg"
+                    className={styles.donationButton}
+                    color="red"
+                >
+                    Donate Now
+                </Button>
+            </div>
+        </FadeIn>
+    );
+}
+
 function SponsorTier({ title, sponsors, tierClass }: {
     title: string;
     sponsors: Array<Sponsor>;
@@ -355,6 +383,8 @@ export default function Support() {
                         backgroundImage={heroImage}
                         title={`SPONSORS`}
                     />
+                    
+                    <DonationSection />
 
                     <SponsorTier
                         title="Ultimate"
