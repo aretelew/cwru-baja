@@ -63,6 +63,14 @@ const data: UserDataType[] = [
     { name: 'Neel Mani Sulkunte', subteams: ['Manufacturing'], classOf: '2027', major: 'Mechanical Engineering' },
     { name: 'Nick Bulawa', subteams: ['Manufacturing'], classOf: '2027', major: 'Mechanical Engineering' },
     { name: 'Niranjan Girish', subteams: ['Systems'], classOf: '2027', major: 'Computer & Electrical Engineering' },
+    { name: 'Sai Charmitha Yelampalli', subteams: ['Business Presentation', 'Systems'], classOf: '2027', major: 'Biomedical Engineering (Pre-med)' },
+    { name: 'Sai Subramanian', subteams: ['Systems'], classOf: '2027', major: 'Electrical Engineering' },
+    { name: 'Steven Chen', subteams: ['Manufacturing'], classOf: '2027', major: 'Mechanical Engineering' },
+    { name: 'Thomas Murphy', subteams: ['Manufacturing'], classOf: '2026', major: 'Mechanical Engineering' },
+    { name: 'Veronica Talan', subteams: ['Drivetrain', 'Manufacturing'], classOf: '2028', major: 'Biomedical Engineering (Pre-med)' },
+    { name: 'William MacCormack', subteams: ['Systems'], classOf: '2025', major: 'Aerospace Engineering' },
+    { name: 'Zach Brown', subteams: ['Systems'], classOf: '2025', major: 'Electrical Engineering' },
+    { name: 'Zhansar Zhasparov', subteams: ['Manufacturing'], classOf: '2028', major: 'Mechanical Engineering' },
 ];
 
 type SortField = 'name' | 'classOf' | null;
@@ -156,4 +164,3 @@ export function UsersTable() {
         </div>
     );
 }
-
