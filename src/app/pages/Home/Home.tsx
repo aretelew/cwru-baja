@@ -113,7 +113,7 @@ export default function Home() {
                                         color="red"
                                         size="md"
                                         component="a"
-                                        href="/cwru-baja/competition"
+                                        href="/website/competition"
                                         className={styles.actionButton}
                                         radius="md"
                                     >
@@ -124,7 +124,7 @@ export default function Home() {
                                         color="red"
                                         size="md"
                                         component="a"
-                                        href="/cwru-baja/social"
+                                        href="/website/social"
                                         className={styles.actionButton}
                                         radius="md"
                                     >
@@ -135,7 +135,7 @@ export default function Home() {
                                         color="orange"
                                         size="md"
                                         component="a"
-                                        href="/cwru-baja/support"
+                                        href="/website/support"
                                         className={styles.actionButton}
                                         radius="md"
                                     >
