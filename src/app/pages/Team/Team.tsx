@@ -143,7 +143,7 @@ const operationsBoard: MemberType[] = [
     },
     {
         name: "Collin Lorenzen",
-        role: "Testing Lead",
+        role: "Race Logistics Lead",
         img: LMF04690,
         graduationYear: "2025",
         linkedin: "https://www.linkedin.com/company/cwru-motorsports/"
@@ -271,40 +271,40 @@ export default function Team() {
     return (
         <>
             <HeaderSimple />
-                <div className={styles.mainContainer}>
-                    <HeroSection
-                        backgroundImage={heroImage}
-                        title={`MEET THE TEAM`}
-                        subtitle={"2024 - 2025"}
-                    />
-                    <FadeIn direction="up" delay={0.1}>
-                        <div className={styles.section}>
-                            <h1 className={styles.sectionTitle}>Executive Board</h1>
-                            <MembersList members={executiveBoard} />
-                        </div>
-                    </FadeIn>
+            <div className={styles.mainContainer}>
+                <HeroSection
+                    backgroundImage={heroImage}
+                    title={`MEET THE TEAM`}
+                    subtitle={"2024 - 2025"}
+                />
+                <FadeIn direction="up" delay={0.1}>
+                    <div className={styles.section}>
+                        <h1 className={styles.sectionTitle}>Executive Board</h1>
+                        <MembersList members={executiveBoard} />
+                    </div>
+                </FadeIn>
 
-                    <FadeIn direction="up" delay={0.2}>
-                        <div className={styles.section}>
-                            <h2 className={styles.sectionTitle}>Operations Board</h2>
-                            <MembersList members={operationsBoard} />
-                        </div>
-                    </FadeIn>
+                <FadeIn direction="up" delay={0.2}>
+                    <div className={styles.section}>
+                        <h2 className={styles.sectionTitle}>Operations Board</h2>
+                        <MembersList members={operationsBoard} />
+                    </div>
+                </FadeIn>
 
-                    <FadeIn direction="up" delay={0.3}>
-                        <div className={styles.section}>
-                            <h2 className={styles.sectionTitle}>Specialty Leads</h2>
-                            <MembersList members={specialtyLeads} />
-                        </div>
-                    </FadeIn>
+                <FadeIn direction="up" delay={0.3}>
+                    <div className={styles.section}>
+                        <h2 className={styles.sectionTitle}>Specialty Leads</h2>
+                        <MembersList members={specialtyLeads} />
+                    </div>
+                </FadeIn>
 
-                    <FadeIn direction="up" delay={0.4}>
-                        <div className={styles.section}>
-                            <h2 className={styles.sectionTitle}>General Body</h2>
-                            <UsersTable />
-                        </div>
-                    </FadeIn>
-                </div>
+                <FadeIn direction="up" delay={0.4}>
+                    <div className={styles.section}>
+                        <h2 className={styles.sectionTitle}>General Body</h2>
+                        <UsersTable />
+                    </div>
+                </FadeIn>
+            </div>
             <FooterSocial />
         </>
     );

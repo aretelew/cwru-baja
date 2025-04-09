@@ -100,3 +100,20 @@
     height: 100%;
     border: none;
 }
+
+.buttonGroup {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.actionButton {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    min-width: 130px;
+}
+
+.actionButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}

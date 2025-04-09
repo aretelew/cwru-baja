@@ -1,6 +1,6 @@
 import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple.tsx';
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial.tsx';
-import { Image, Text, Button, Group, Box } from '@mantine/core';
+import { Image, Text, Button, Box } from '@mantine/core';
 import heroImage from '../../../assets/images/LMF00234.jpg';
 import styles from './Home.module.css';
 import '@mantine/carousel/styles.css';
@@ -107,13 +107,15 @@ export default function Home() {
                                 CWRU Baja SAE is a student-run engineering team dedicated to designing, building, testing, and racing an off-road vehicle for the international Baja SAE competition. Our diverse team brings together students from various engineering disciplines to tackle real-world challenges in vehicle design and performance. Through hands-on experience, we develop practical skills in engineering, project management, and teamwork that complement our academic studies. Join us as we push the boundaries of what's possible in off-road vehicle design!
                             </Text>
                             <Box mt={40}>
-                                <Group justify="center">
+                                <div className={styles.buttonGroup}>
                                     <Button
                                         variant="filled"
                                         color="red"
                                         size="md"
                                         component="a"
                                         href="/cwru-baja/competition"
+                                        className={styles.actionButton}
+                                        radius="md"
                                     >
                                         Learn More
                                     </Button>
@@ -123,10 +125,23 @@ export default function Home() {
                                         size="md"
                                         component="a"
                                         href="/cwru-baja/social"
+                                        className={styles.actionButton}
+                                        radius="md"
                                     >
                                         Contact Us
                                     </Button>
-                                </Group>
+                                    <Button
+                                        variant="filled"
+                                        color="orange"
+                                        size="md"
+                                        component="a"
+                                        href="/cwru-baja/support"
+                                        className={styles.actionButton}
+                                        radius="md"
+                                    >
+                                        Support Us
+                                    </Button>
+                                </div>
                             </Box>
                         </div>
                         <Image
@@ -154,4 +169,3 @@ export default function Home() {
         </>
     );
 }
-
