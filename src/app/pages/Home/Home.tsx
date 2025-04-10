@@ -1,6 +1,6 @@
 import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple.tsx';
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial.tsx';
-import { Image, Text, Button, Box } from '@mantine/core';
+import { Text, Button, Box } from '@mantine/core';
 import heroImage from '../../../assets/images/LMF00234.jpg';
 import styles from './Home.module.css';
 import '@mantine/carousel/styles.css';
