@@ -26,13 +26,12 @@
 
 .aboutContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 2.5rem;
     align-items: center;
     text-align: center;
-    gap: 3rem;
     margin-bottom: 2rem;
 }
 
@@ -42,7 +41,8 @@
 }
 
 .textContainer {
-    flex: 2;
+    max-width: 900px;
+    margin: 0 auto;
     text-align: left;
 }
 
@@ -68,20 +68,6 @@
 .textContainer p {
     font-size: 1.1rem;
     line-height: 1.6;
-}
-
-.textImage {
-    flex: 1;
-    max-width: 400px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.textImage:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
 .videoContainer {
@@ -116,4 +102,36 @@
 .actionButton:hover {
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .aboutContainer {
+        padding: 1.5rem;
+    }
+
+    .textContainer {
+        width: 100%;
+    }
+
+    .buttonGroup {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .actionButton {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .textContainer h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+    }
+
+    .textContainer p {
+        font-size: 1rem;
+        line-height: 1.5;
+    }
 }

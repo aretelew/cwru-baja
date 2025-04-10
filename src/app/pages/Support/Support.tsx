@@ -381,7 +381,7 @@ export default function Support() {
                 <div className={styles.mainContainer}>
                     <HeroSection
                         backgroundImage={heroImage}
-                        title={`SPONSORS`}
+                        title={"SUPPORT"}
                     />
                     
                     <DonationSection />

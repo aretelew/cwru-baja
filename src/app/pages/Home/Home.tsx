@@ -97,7 +97,7 @@ export default function Home() {
         <>
             <HeaderSimple />
             <div className={styles.mainContainer}>
-                <HeroSection backgroundImage={heroImage} title="CWRU MOTORSPORTS" />
+                <HeroSection backgroundImage={heroImage} title="CWRU BAJA" />
 
                 <FadeIn direction="up" delay={0.2}>
                     <div className={styles.aboutContainer}>
@@ -144,12 +144,6 @@ export default function Home() {
                                 </div>
                             </Box>
                         </div>
-                        <Image
-                            src={heroImage}
-                            alt="Text Image"
-                            className={styles.textImage}
-                            radius="md"
-                        />
                     </div>
                 </FadeIn>
 

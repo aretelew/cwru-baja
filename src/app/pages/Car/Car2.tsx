@@ -155,7 +155,7 @@ export default function Car() {
       <div className={styles.mainContainer}>
         <HeroSection
           backgroundImage={heroImage}
-          title="CWRU MOTORSPORTS VEHICLE"
+          title="THE CAR"
           subtitle={carData.name}
           verticalPosition="60%"
         />

@@ -280,7 +280,7 @@ export default function Competition() {
             <div className={styles.mainContainer}>
                 <HeroSection
                     backgroundImage={heroImage}
-                    title={"COMPETITION"}
+                    title={"BAJA SAE"}
                     verticalPosition="80%"
                 />
                 <FadeIn direction="up" delay={0.1}>
