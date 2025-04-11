@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple';
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial';
 import { HeroSection } from '../../../components/HeroSection/HeroSection';
@@ -32,8 +32,10 @@ import electronicsImage3 from '../../../assets/images/LMF02442.jpg';
 
 export default function Car() {
   const [selectedImages, setSelectedImages] = useState<Record<string, number>>({});
+  const [isMobile, setIsMobile] = useState(false);
 
   const carouselRefs = useRef<Record<string, Embla | null>>({});
+  const mainCarouselRefs = useRef<Record<string, Embla | null>>({});
 
   const carData = {
     name: "SR25",
@@ -149,6 +151,19 @@ export default function Car() {
     }
   };
 
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth <= 992);
+    };
+
+    checkIfMobile();
+    window.addEventListener('resize', checkIfMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkIfMobile);
+    };
+  }, []);
+
   return (
     <>
       <HeaderSimple />
@@ -198,18 +213,45 @@ export default function Car() {
 
                     <div className={styles.sectionImageWrapper}>
                       <div className={styles.sectionImageContainer}>
-                        {/* Main image display */}
-                        <div className={styles.mainImageContainer}>
-                          {section.images && section.images.length > 0 && (
+                        {/* Main image display - Desktop */}
+                        {!isMobile && section.images && section.images.length > 0 && (
+                          <div className={styles.mainImageContainer}>
                             <img
                               src={section.images[selectedImages[section.key] || 0]}
                               alt={`${section.title} main image`}
                               className={styles.mainImage}
                             />
-                          )}
-                        </div>
+                          </div>
+                        )}
 
-                        {section.images && section.images.length > 1 && (
+                        {/* Mobile Carousel */}
+                        {isMobile && section.images && section.images.length > 0 && (
+                          <Carousel
+                            getEmblaApi={(embla) => {
+                              mainCarouselRefs.current[section.key] = embla;
+                            }}
+                            className={styles.mobileMainCarousel}
+                            withIndicators
+                            loop
+                            slideSize="100%"
+                            withControls
+                          >
+                            {section.images.map((image, index) => (
+                              <Carousel.Slide key={index}>
+                                <div className={styles.mainImageContainer}>
+                                  <img
+                                    src={image}
+                                    alt={`${section.title} image ${index + 1}`}
+                                    className={styles.mainImage}
+                                  />
+                                </div>
+                              </Carousel.Slide>
+                            ))}
+                          </Carousel>
+                        )}
+
+                        {/* Thumbnail Carousel - Desktop only */}
+                        {!isMobile && section.images && section.images.length > 1 && (
                           <Carousel
                             getEmblaApi={(embla) => {
                               carouselRefs.current[section.key] = embla;

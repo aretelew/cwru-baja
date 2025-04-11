@@ -78,9 +78,9 @@ export const FadeIn = ({
             style={{
                 opacity: isVisible ? 1 : 0,
                 transform: isVisible ? 'translate(0)' : transform,
-                transition: noTransition
-                    ? 'none'
-                    : `opacity 0.6s ease-out, transform 0.6s ease-out`,
+                transitionProperty: noTransition ? 'none' : 'opacity, transform',
+                transitionDuration: noTransition ? '0s' : '0.6s',
+                transitionTimingFunction: noTransition ? 'ease' : 'ease-out',
                 transitionDelay: noTransition ? '0s' : `${delay}s`
             }}
         >

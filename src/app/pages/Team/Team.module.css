@@ -79,7 +79,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 200px;
+    width: 150px;
     transition: transform 0.2s ease;
 }
 
@@ -117,14 +117,22 @@ h1 {
     color: inherit;
 }
 
-/* New styles for graduation year */
 .gradYear {
     margin-top: 0.25rem;
     color: var(--mantine-color-gray-5);
     font-style: italic;
 }
 
-/* Optional: Adjust spacing for the roles to accommodate graduation year */
 .member > .mantine-Text-root:nth-of-type(1) {
     margin-bottom: 0.1rem;
+}
+
+.memberImage {
+    object-position: center;
+}
+
+@media (min-width: 768px) {
+    .member {
+        width: 225px
+    }
 }
