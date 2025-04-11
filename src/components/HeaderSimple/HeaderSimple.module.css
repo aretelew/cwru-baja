@@ -36,12 +36,22 @@
 }
 
 .logoContainer {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 
 .logo {
-  height: 40px;
-  width: auto;
+    height: 40px;
+    width: auto;
+}
+
+.drawerStack {
+    padding-top: 20px;
+}
+
+.drawerLink:not([data-active]) {
+    background-color: light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-7));
+    color: light-dark(var(--mantine-color-gray-8), var(--mantine-color-dark-0));
+    border: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));
 }
