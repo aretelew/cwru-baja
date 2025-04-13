@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useEffect } from 'react';
 import { MantineProvider } from '@mantine/core';
-import { Routes, Route } from 'react-router-dom';
+import {Routes, Route, useLocation} from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home/Home.tsx';
 import '@mantine/core/styles.css';
@@ -49,6 +49,7 @@ export const theme = createTheme({
 });
 
 function App() {
+  const location = useLocation();
   useEffect(() => {
     const preloadPages = () => {
       import('./pages/Team/Team.tsx');
@@ -63,6 +64,10 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <MantineProvider defaultColorScheme="dark" theme={theme}>
       <Routes>
@@ -74,6 +79,7 @@ function App() {
         <Route path='/support' element={<Support />} />
         <Route path='/social' element={<Social />} />
       </Routes>
+
     </MantineProvider>
   );
 }
