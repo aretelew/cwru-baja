@@ -136,7 +136,7 @@ const operationsBoard: MemberType[] = [
     },
     {
         name: "Shelley Wei",
-        role: "Manufacturing Lead",
+        role: "Manufacturing Coordinator",
         img: LMF04542,
         graduationYear: "2027",
         linkedin: "https://www.linkedin.com/in/shelleyywei/"
@@ -153,7 +153,7 @@ const operationsBoard: MemberType[] = [
 const specialtyLeads: MemberType[] = [
     {
         name: "Lucy Ma",
-        role: "Cost Report",
+        role: "Cost Report Coordinator",
         img: LMF04627,
         graduationYear: "2027",
         linkedin: "https://www.linkedin.com/in/lucyma-/"
@@ -174,7 +174,7 @@ const specialtyLeads: MemberType[] = [
     },
     {
         name: "Joshua Stout",
-        role: "Buisness Presentation",
+        role: "Business Presentation Coordinator",
         img: LMF04466,
         graduationYear: "2027",
         linkedin: "https://www.linkedin.com/in/joshua-martin-stout/"

@@ -23,7 +23,7 @@ interface UserDataType {
 }
 
 const data: UserDataType[] = [
-    { name: 'Abra Giddings', subteams: ['Systems', 'Brakes'], classOf: '2028', major: 'Computer Engineering & Computer Science' },
+    { name: 'Abra Giddings', subteams: ['Systems', 'Test Engineering'], classOf: '2028', major: 'Computer Engineering & Computer Science' },
     { name: 'Abraham Loren', subteams: ['CNC'], classOf: '2028', major: 'Mechanical Engineering' },
     { name: 'AJ Williams', subteams: ['Frame', 'Drivetrain'], classOf: '2027', major: 'Mechanical Engineering' },
     { name: 'Arka Nath', subteams: ['Brakes'], classOf: '2027', major: 'Mechanical Engineering' },

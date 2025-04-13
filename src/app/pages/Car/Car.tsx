@@ -79,7 +79,7 @@ export default function Car() {
         specs: [
           { name: 'Braking System', value: 'Custom dual master cylinders. Designed and CNC\'d in house' },
           { name: 'Calipers', value: 'Dual piston floating caliper in the front and Fixed quad piston rear brake caliper. Outboard front and inboard rear calipers' },
-          { name: 'Rotors', value: 'Water-jet 1/8" topology optimzied rotors' },
+          { name: 'Rotors', value: 'Water-jet 1/8" topology optimized rotors' },
           { name: 'Pedal Ratio', value: '5:1 pedal ratio for optimal braking force' },
           { name: 'Lines', value: 'Steel-braided Teflon hydraulic lines' },
           { name: 'Fluid', value: 'DOT 4.0 brake fluid' }
