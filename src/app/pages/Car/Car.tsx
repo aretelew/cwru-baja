@@ -54,7 +54,7 @@ export default function Car() {
         specs: [
           { name: 'Material', value: '4130 Steel' },
           { name: 'Joining Method', value: 'GTAW with ER70S-2 filler material at manually-notched joints' },
-          { name: 'Body Panels', value: 'Molded Kydex body panels with aluminum firewall and UHMW skid plate' },
+          { name: 'Body Panels', value: 'Molded HDPE body panels with aluminum firewall and UHMW skid plate' },
           { name: 'Tubing', value: 'Tubes bent and notched in-house'}
         ]
       },
