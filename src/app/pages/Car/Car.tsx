@@ -5,7 +5,7 @@ import { HeroSection } from '../../../components/HeroSection/HeroSection';
 import { FadeIn } from '../../../components/FadeIn/FadeIn';
 import { Title, Text } from '@mantine/core';
 import { Carousel, Embla } from '@mantine/carousel';
-import styles from './Car2.module.css';
+import styles from './Car.module.css';
 
 import heroImage from '../../../assets/images/LMF02810.jpg';
 
