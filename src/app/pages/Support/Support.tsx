@@ -5,7 +5,7 @@ import { HeaderSimple } from '../../../components/HeaderSimple/HeaderSimple.tsx'
 import { FooterSocial } from '../../../components/FooterSocial/FooterSocial.tsx';
 import { FadeIn } from '../../../components/FadeIn/FadeIn.tsx';
 import { HeroSection } from "../../../components/HeroSection/HeroSection.tsx";
-import heroImage from "../../../assets/images/butler_bash_car_lineup.jpg";
+import heroImage from "../../../assets/images/LMF82642.jpg";
 
 // ULTIMATE SPONSORS
 import fox from '../../../assets/logo/sponsor/svg/fox.svg';

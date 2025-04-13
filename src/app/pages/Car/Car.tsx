@@ -28,7 +28,7 @@ import drivetrainImage3 from '../../../assets/images/LMF00777.jpg';
 
 import electronicsImage1 from '../../../assets/images/LMF02842.jpg';
 import electronicsImage2 from '../../../assets/images/LMF16483.png';
-import electronicsImage3 from '../../../assets/images/LMF02442.jpg';
+import electronicsImage3 from "../../../assets/images/LMF82642.jpg"
 
 export default function Car() {
   const [selectedImages, setSelectedImages] = useState<Record<string, number>>({});

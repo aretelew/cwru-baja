@@ -4,7 +4,6 @@ import { FooterSocial } from '../../../components/FooterSocial/FooterSocial';
 import { FadeIn } from '../../../components/FadeIn/FadeIn';
 import styles from './Competition.module.css';
 import { HeroSection } from '../../../components/HeroSection/HeroSection';
-// import myImage from '../../../assets/images/butler_bash_car_lineup.jpg';
 import heroImage from '../../../assets/images/LMF02976.jpg';
 
 const Award = ({ text }: { text: string }) => {
