@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home/Home.tsx';
 import '@mantine/core/styles.css';
-import Car from "./pages/Car/Car2.tsx";
+import Car from "./pages/Car/Car.tsx";
 import { createTheme } from '@mantine/core';
 
 const Team = React.lazy(() => import('./pages/Team/Team.tsx'));

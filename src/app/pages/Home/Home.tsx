@@ -113,7 +113,7 @@ export default function Home() {
                                         color="red"
                                         size="md"
                                         component="a"
-                                        href="/website/competition"
+                                        href="/competition"
                                         className={styles.actionButton}
                                         radius="md"
                                     >
@@ -124,7 +124,7 @@ export default function Home() {
                                         color="red"
                                         size="md"
                                         component="a"
-                                        href="/website/social"
+                                        href="/social"
                                         className={styles.actionButton}
                                         radius="md"
                                     >
@@ -135,7 +135,7 @@ export default function Home() {
                                         color="orange"
                                         size="md"
                                         component="a"
-                                        href="/website/support"
+                                        href="/support"
                                         className={styles.actionButton}
                                         radius="md"
                                     >
