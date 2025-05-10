@@ -6,6 +6,7 @@ import { FooterSocial } from '../../../components/FooterSocial/FooterSocial.tsx'
 import { FadeIn } from '../../../components/FadeIn/FadeIn.tsx';
 import { HeroSection } from "../../../components/HeroSection/HeroSection.tsx";
 import heroImage from "../../../assets/images/LMF82642.jpg";
+import tshirtImage from '../../../assets/images/cwru-baja-tshirt.png'
 
 // ULTIMATE SPONSORS
 import fox from '../../../assets/logo/sponsor/svg/fox.svg';
@@ -314,7 +315,7 @@ function DonationSection() {
     return (
         <FadeIn>
             <div className={styles.donationSection}>
-                <h2 className={styles.donationTitle}>Support Our Team</h2>
+                <h2 className={styles.donationTitle}>Donate</h2>
                 <p className={styles.donationText}>
                     Your generous contribution helps CWRU Baja SAE continue to design, build, and compete with our off-road vehicles. 
                     Donations directly support new equipment, materials, competition fees, and travel expenses for our team members.
@@ -332,6 +333,34 @@ function DonationSection() {
                     color="red"
                 >
                     Donate Now
+                </Button>
+            </div>
+        </FadeIn>
+    );
+}
+
+function ApparelSection() {
+    return (
+        <FadeIn>
+            <   div className={styles.apparelSection}>
+                <h2 className={styles.apparelTitle}>Apparel</h2>
+                <div className={styles.apparelGrid}>
+                    <img src={tshirtImage} alt="CWRU Baja SAE Merch" className={styles.apparelImage} />
+                    <p className={styles.apparelText}>
+                        Support our team with official CWRU Motorsports apparel.
+                        By purchasing these items, you not only show your school spirit but also directly help fund new equipment, travel expenses, and competition fees for our team.                    </p>
+                </div>
+
+                <Button
+                    component="a"
+                    href="https://cwrubaja.printful.me/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    size="lg"
+                    className={styles.apparelButton}
+                    color="red"
+                >
+                    Purchase
                 </Button>
             </div>
         </FadeIn>
@@ -383,8 +412,11 @@ export default function Support() {
                         backgroundImage={heroImage}
                         title={"SUPPORT"}
                     />
-                    
-                    <DonationSection />
+
+                    <div className={styles.supportContainer}>
+                        <DonationSection />
+                        <ApparelSection />
+                    </div>
 
                     <SponsorTier
                         title="Ultimate"

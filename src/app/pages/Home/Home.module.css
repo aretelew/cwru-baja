@@ -26,12 +26,11 @@
 
 .aboutContainer {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 2.5rem;
     align-items: center;
-    text-align: center;
     margin-bottom: 2rem;
 }
 
@@ -41,8 +40,7 @@
 }
 
 .textContainer {
-    max-width: 900px;
-    margin: 0 auto;
+    max-width: 60%;
     text-align: left;
 }
 
@@ -65,9 +63,115 @@
     border-radius: 2px;
 }
 
-.textContainer p {
+.aboutText {
     font-size: 1.1rem;
     line-height: 1.6;
+    color: white;
+}
+
+.aboutImage {
+    width: 35%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.supportContainer {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    gap: 2rem;
+}
+
+.donationSection, .apparelSection {
+    width: 100%;
+    height: 100%;
+    max-width: 900px;
+    max-height: 500px;
+    margin-bottom: 2rem;
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    padding-bottom: 2.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--mantine-color-dark-4);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.donationSection:hover, .apparelSection:hover {
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    border-color: var(--mantine-color-dark-3);
+}
+
+.donationTitle, .apparelTitle {
+    font-size: 2.2rem;
+    color: white;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.donationTitle::after, .apparelTitle::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--mantine-color-red-6);
+    border-radius: 2px;
+}
+
+.donationText, .apparelText {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+.donationInstructions {
+    font-size: 1.1rem;
+    margin-bottom: 3.5rem;
+    padding: 1rem;
+    background-color: var(--mantine-color-dark-6);
+    border-radius: 8px;
+    color: rgba(255, 255, 255, 0.85);
+    display: inline-block;
+    border: 1px solid var(--mantine-color-dark-3);
+}
+
+.donationButton, .apparelButton {
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 0 2rem;
+    transition: transform 0.2s ease;
+    background-color: var(--mantine-color-red-7);
+    border: none;
+}
+
+.donationButton:hover {
+    transform: scale(1.05);
+    background-color: var(--mantine-color-red-8);
+}
+
+.apparelGrid {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+}
+
+.apparelImage {
+    width: 100%;
+    max-width: 250px;
+    max-height: 250px;
+    border-radius: 8px;
+    border-color: red;
+    margin-right: 2rem;
 }
 
 .videoContainer {
@@ -104,13 +208,44 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+@media (max-width: 1330px) {
+    .supportContainer {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    .donationSection, .apparelSection {
+        max-height: none;
+    }
+
+    .apparelGrid {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .apparelImage {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .apparelText {
+        margin-bottom: 0;
+    }
+}
+
 @media (max-width: 768px) {
     .aboutContainer {
         padding: 1.5rem;
+        flex-direction: column;
     }
 
     .textContainer {
-        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .aboutImage {
+        display: none;
     }
 
     .buttonGroup {
@@ -135,3 +270,4 @@
         line-height: 1.5;
     }
 }
+

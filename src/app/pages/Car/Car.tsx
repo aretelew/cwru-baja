@@ -9,10 +9,9 @@ import styles from './Car.module.css';
 
 import heroImage from '../../../assets/images/LMF02810.jpg';
 
-import frameImage1 from '../../../assets/images/LMF02596.jpg';
-import frameImage2 from '../../../assets/images/LMF03021.jpg';
-import frameImage3 from '../../../assets/images/LMF94729.jpg';
-import frameImage4 from '../../../assets/images/LMF09114.jpg';
+import frameImage1 from '../../../assets/images/LMF03021.jpg';
+import frameImage2 from '../../../assets/images/LMF94729.jpg';
+import frameImage3 from '../../../assets/images/LMF09114.jpg';
 
 import suspensionImage1 from '../../../assets/images/LMF09154.jpg';
 import suspensionImage3 from '../../../assets/images/LMF09078.jpg';
@@ -49,7 +48,7 @@ export default function Car() {
       {
         key: "frame",
         title: "FRAME",
-        images: [frameImage1, frameImage2, frameImage3, frameImage4],
+        images: [frameImage1, frameImage2, frameImage3],
         description: "Our custom frame provides the foundation for our competition vehicle, designed for optimal strength-to-weight ratio and driver safety.",
         specs: [
           { name: 'Material', value: '4130 Steel' },
