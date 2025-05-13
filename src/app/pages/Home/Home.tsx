@@ -103,7 +103,7 @@ function DonationSection() {
                     Donations directly support new equipment, materials, competition fees, and travel expenses for our team members.
                 </p>
                 <div className={styles.donationInstructions}>
-                    <strong>Important:</strong> Once reaching the giving form, check "other" in the gift designation field and enter "Baja".
+                    <strong>Important:</strong> Once reaching the giving form, find "other" in the gift designation field. Click on the plus sign and enter "Baja".
                 </div>
                 <Button
                     component="a"
